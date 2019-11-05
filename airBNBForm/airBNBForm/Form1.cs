@@ -12,6 +12,7 @@ namespace airBNBForm
 {
     public partial class Form1 : Form
     {
+        Neighborhood Pleasantview = new Neighborhood();
         public Form1()
         {
             InitializeComponent();

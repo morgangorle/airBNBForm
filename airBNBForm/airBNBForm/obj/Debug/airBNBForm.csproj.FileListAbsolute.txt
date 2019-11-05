@@ -1,0 +1,10 @@
+M:\MG files\Coding\airBNBform\airBNBForm\airBNBForm\airBNBForm\bin\Debug\airBNBForm.exe.config
+M:\MG files\Coding\airBNBform\airBNBForm\airBNBForm\airBNBForm\bin\Debug\airBNBForm.exe
+M:\MG files\Coding\airBNBform\airBNBForm\airBNBForm\airBNBForm\bin\Debug\airBNBForm.pdb
+M:\MG files\Coding\airBNBform\airBNBForm\airBNBForm\airBNBForm\obj\Debug\airBNBForm.csprojAssemblyReference.cache
+M:\MG files\Coding\airBNBform\airBNBForm\airBNBForm\airBNBForm\obj\Debug\airBNBForm.Form1.resources
+M:\MG files\Coding\airBNBform\airBNBForm\airBNBForm\airBNBForm\obj\Debug\airBNBForm.Properties.Resources.resources
+M:\MG files\Coding\airBNBform\airBNBForm\airBNBForm\airBNBForm\obj\Debug\airBNBForm.csproj.GenerateResource.cache
+M:\MG files\Coding\airBNBform\airBNBForm\airBNBForm\airBNBForm\obj\Debug\airBNBForm.csproj.CoreCompileInputs.cache
+M:\MG files\Coding\airBNBform\airBNBForm\airBNBForm\airBNBForm\obj\Debug\airBNBForm.exe
+M:\MG files\Coding\airBNBform\airBNBForm\airBNBForm\airBNBForm\obj\Debug\airBNBForm.pdb
