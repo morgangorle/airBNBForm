@@ -13,8 +13,18 @@ namespace airBNBForm
         string districtName;
         int numOfnHoods;
         Neighborhood[] districtNhoods;
-        public District()
+        public District(string initialDistrictName, int initialNumOfNHoods, Neighborhood[] initialNHoods)
         {
+            districtName = initialDistrictName;
+            numOfnHoods = initialNumOfNHoods;
+            districtNhoods = initialNHoods;
+
+        }
+        public District(string initialDistrictName)
+        {
+            districtName = initialDistrictName;
+            numOfnHoods = 0;
+            districtNhoods = new Neighborhood[0];
 
         }
         //Here are the getters for this class

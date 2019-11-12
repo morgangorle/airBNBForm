@@ -15,8 +15,20 @@ namespace airBNBForm
         double latitude, longitude,price;
         int numOfProperties,minNumOfNights,availiableDays;
 
-        public Property()
+        public Property(string initialPropertyID,string initialPropertyName, string initialHostID, string initialHostName, string initialRoomType, double initialLatitude, double initialLongitude, double initialPrice,int initialNumOfProperties, int initialMinNumOfNights, int initialAvailiableDays)
         {
+            propertyID = initialPropertyID;
+            propertyName = initialPropertyName;
+            hostID = initialHostID;
+            hostName = initialHostName;
+            roomType = initialRoomType;
+            latitude = initialLatitude;
+            longitude = initialLongitude;
+            price = initialPrice;
+            numOfProperties = initialNumOfProperties;
+            minNumOfNights = initialMinNumOfNights;
+            availiableDays = initialAvailiableDays;
+
 
         }
         //The getters for the Property variables

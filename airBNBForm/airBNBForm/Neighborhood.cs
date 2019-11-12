@@ -12,8 +12,18 @@ namespace airBNBForm
         string nHoodName;
         int numOfProperties;
         Property[] nhoodProperties;
-        public Neighborhood()
+        public Neighborhood(string initialNHoodName, int initialNumOfProperties, Property[] InitialProperties)
         {
+            nHoodName = initialNHoodName;
+            numOfProperties = initialNumOfProperties;
+            nhoodProperties = InitialProperties;
+
+        }
+        public Neighborhood(string initialNHoodName)
+        {
+            nHoodName = initialNHoodName;
+            numOfProperties = 0;
+            nhoodProperties = new Property[0];
 
         }
         //The getters for the variables in this class
