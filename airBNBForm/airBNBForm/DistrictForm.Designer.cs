@@ -57,6 +57,7 @@
             this.nextDistrictButton.TabIndex = 1;
             this.nextDistrictButton.Text = "Next District";
             this.nextDistrictButton.UseVisualStyleBackColor = true;
+            this.nextDistrictButton.Click += new System.EventHandler(this.NextDistrictButton_Click);
             // 
             // editDistrictButton
             // 
@@ -67,6 +68,7 @@
             this.editDistrictButton.TabIndex = 2;
             this.editDistrictButton.Text = "Edit Districts";
             this.editDistrictButton.UseVisualStyleBackColor = true;
+            this.editDistrictButton.Click += new System.EventHandler(this.EditDistrictButton_Click);
             // 
             // addDistrictButton
             // 
@@ -77,6 +79,7 @@
             this.addDistrictButton.TabIndex = 3;
             this.addDistrictButton.Text = "Add District";
             this.addDistrictButton.UseVisualStyleBackColor = true;
+            this.addDistrictButton.Click += new System.EventHandler(this.AddDistrictButton_Click);
             // 
             // outputBox
             // 

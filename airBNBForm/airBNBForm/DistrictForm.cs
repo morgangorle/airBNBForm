@@ -16,9 +16,12 @@ namespace airBNBForm
         District[] database;
         Neighborhood[] storedNeighborhoods;
         Property[] storedProperties;
-        int currentDistrict = 0;
+        int currentDistrict = 0,numOfDistricts = 2;
         //These variables will create the sample data
         Property sample1, sample2, sample3, sample4, sample5, sample6, sample7, sample8, sample9, sample10;
+
+
+
         Neighborhood NHood1, NHood2, NHood3;
         District District1, District2;
         public DistrictForm()
@@ -81,6 +84,30 @@ namespace airBNBForm
                 }
             }
             //outputBox.Items.Add(String.Format("{0}",storedProperties[currentDistrict].getPropertyName()));
+
+        }
+        private void NextDistrictButton_Click(object sender, EventArgs e)
+        {
+            if (currentDistrict + 1 == numOfDistricts)
+            {
+                currentDistrict = 0;
+            }
+            else
+            {
+                currentDistrict++;
+
+            }
+
+
+
+        }
+        private void AddDistrictButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditDistrictButton_Click(object sender, EventArgs e)
+        {
 
         }
     }
