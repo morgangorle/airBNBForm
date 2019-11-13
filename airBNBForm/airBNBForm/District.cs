@@ -36,6 +36,10 @@ namespace airBNBForm
         {
             return numOfnHoods;
         }
+        public Neighborhood[] getDistrictNHoods()
+        {
+            return districtNhoods;
+        }
 
         //Here are the setters for this class
         public void setDistrictName(string newDistrictName)
@@ -45,6 +49,18 @@ namespace airBNBForm
         public void setNumOfnHoods(int newNumOfnHoods)
         {
             numOfnHoods = newNumOfnHoods;
+        }
+        public void setDistrictNHoods(Neighborhood[] newDistrictNHoods)
+        {
+            districtNhoods = newDistrictNHoods;
+        }
+        //This handles adding a new Neighborhood
+        public void addNHood (Neighborhood newNeighborhood)
+        {
+            numOfnHoods++;
+            Array.Resize(ref districtNhoods, numOfnHoods);
+            districtNhoods[numOfnHoods - 1] = newNeighborhood;
+
         }
     }
 }

@@ -35,6 +35,10 @@ namespace airBNBForm
         {
             return numOfProperties;
         }
+        public Property[] getNHoodProperties()
+        {
+            return nhoodProperties;
+        }
 
         // The setters for the variables in this class
         public void setnHoodName(string newnHoodName)
@@ -44,6 +48,17 @@ namespace airBNBForm
         public void setNumOfProperties(int newNumOfProperties)
         {
             numOfProperties = newNumOfProperties;
+        }
+        public void setNHoodProperties(Property[] newNHoodProperties)
+        {
+            nhoodProperties = newNHoodProperties;
+        }
+        //This handles new additions to the array of properties
+        public void addProperty(Property newProperty)
+        {
+            numOfProperties++;
+            Array.Resize(ref nhoodProperties, numOfProperties);
+            nhoodProperties[numOfProperties - 1] = newProperty;
         }
 
     }
