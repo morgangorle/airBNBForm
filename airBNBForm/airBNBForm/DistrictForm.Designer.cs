@@ -35,12 +35,14 @@
             this.outputBox = new System.Windows.Forms.ListBox();
             this.districtNameLabel = new System.Windows.Forms.Label();
             this.districtNamePrefixLabel = new System.Windows.Forms.Label();
+            this.addNHoodButton = new System.Windows.Forms.Button();
+            this.addPropertyButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // displayDistrictButton
             // 
             this.displayDistrictButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.displayDistrictButton.Location = new System.Drawing.Point(63, 72);
+            this.displayDistrictButton.Location = new System.Drawing.Point(66, 23);
             this.displayDistrictButton.Name = "displayDistrictButton";
             this.displayDistrictButton.Size = new System.Drawing.Size(135, 51);
             this.displayDistrictButton.TabIndex = 0;
@@ -51,7 +53,7 @@
             // nextDistrictButton
             // 
             this.nextDistrictButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.nextDistrictButton.Location = new System.Drawing.Point(63, 122);
+            this.nextDistrictButton.Location = new System.Drawing.Point(66, 73);
             this.nextDistrictButton.Name = "nextDistrictButton";
             this.nextDistrictButton.Size = new System.Drawing.Size(135, 51);
             this.nextDistrictButton.TabIndex = 1;
@@ -62,7 +64,7 @@
             // editDistrictButton
             // 
             this.editDistrictButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.editDistrictButton.Location = new System.Drawing.Point(63, 179);
+            this.editDistrictButton.Location = new System.Drawing.Point(66, 130);
             this.editDistrictButton.Name = "editDistrictButton";
             this.editDistrictButton.Size = new System.Drawing.Size(135, 51);
             this.editDistrictButton.TabIndex = 2;
@@ -73,7 +75,7 @@
             // addDistrictButton
             // 
             this.addDistrictButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.addDistrictButton.Location = new System.Drawing.Point(63, 236);
+            this.addDistrictButton.Location = new System.Drawing.Point(66, 187);
             this.addDistrictButton.Name = "addDistrictButton";
             this.addDistrictButton.Size = new System.Drawing.Size(135, 51);
             this.addDistrictButton.TabIndex = 3;
@@ -93,7 +95,7 @@
             // 
             this.districtNameLabel.AutoSize = true;
             this.districtNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.districtNameLabel.Location = new System.Drawing.Point(417, 34);
+            this.districtNameLabel.Location = new System.Drawing.Point(568, 34);
             this.districtNameLabel.Name = "districtNameLabel";
             this.districtNameLabel.Size = new System.Drawing.Size(187, 26);
             this.districtNameLabel.TabIndex = 5;
@@ -103,17 +105,41 @@
             // 
             this.districtNamePrefixLabel.AutoSize = true;
             this.districtNamePrefixLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.districtNamePrefixLabel.Location = new System.Drawing.Point(261, 34);
+            this.districtNamePrefixLabel.Location = new System.Drawing.Point(392, 34);
             this.districtNamePrefixLabel.Name = "districtNamePrefixLabel";
             this.districtNamePrefixLabel.Size = new System.Drawing.Size(150, 26);
             this.districtNamePrefixLabel.TabIndex = 6;
             this.districtNamePrefixLabel.Text = "District Name:";
+            // 
+            // addNHoodButton
+            // 
+            this.addNHoodButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.addNHoodButton.Location = new System.Drawing.Point(66, 244);
+            this.addNHoodButton.Name = "addNHoodButton";
+            this.addNHoodButton.Size = new System.Drawing.Size(135, 56);
+            this.addNHoodButton.TabIndex = 7;
+            this.addNHoodButton.Text = "Add Neighborhood";
+            this.addNHoodButton.UseVisualStyleBackColor = true;
+            this.addNHoodButton.Click += new System.EventHandler(this.AddNHoodButton_Click);
+            // 
+            // addPropertyButton
+            // 
+            this.addPropertyButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.addPropertyButton.Location = new System.Drawing.Point(66, 306);
+            this.addPropertyButton.Name = "addPropertyButton";
+            this.addPropertyButton.Size = new System.Drawing.Size(135, 43);
+            this.addPropertyButton.TabIndex = 8;
+            this.addPropertyButton.Text = "Add Property";
+            this.addPropertyButton.UseVisualStyleBackColor = true;
+            this.addPropertyButton.Click += new System.EventHandler(this.AddPropertyButton_Click);
             // 
             // DistrictForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.addPropertyButton);
+            this.Controls.Add(this.addNHoodButton);
             this.Controls.Add(this.districtNamePrefixLabel);
             this.Controls.Add(this.districtNameLabel);
             this.Controls.Add(this.outputBox);
@@ -138,6 +164,8 @@
         private System.Windows.Forms.ListBox outputBox;
         private System.Windows.Forms.Label districtNameLabel;
         private System.Windows.Forms.Label districtNamePrefixLabel;
+        private System.Windows.Forms.Button addNHoodButton;
+        private System.Windows.Forms.Button addPropertyButton;
     }
 }
 
