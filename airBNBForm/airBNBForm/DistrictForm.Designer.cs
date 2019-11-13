@@ -34,6 +34,7 @@
             this.addDistrictButton = new System.Windows.Forms.Button();
             this.outputBox = new System.Windows.Forms.ListBox();
             this.districtNameLabel = new System.Windows.Forms.Label();
+            this.districtNamePrefixLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // displayDistrictButton
@@ -95,11 +96,22 @@
             this.districtNameLabel.TabIndex = 5;
             this.districtNameLabel.Text = "Name will be here";
             // 
+            // districtNamePrefixLabel
+            // 
+            this.districtNamePrefixLabel.AutoSize = true;
+            this.districtNamePrefixLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.districtNamePrefixLabel.Location = new System.Drawing.Point(261, 34);
+            this.districtNamePrefixLabel.Name = "districtNamePrefixLabel";
+            this.districtNamePrefixLabel.Size = new System.Drawing.Size(150, 26);
+            this.districtNamePrefixLabel.TabIndex = 6;
+            this.districtNamePrefixLabel.Text = "District Name:";
+            // 
             // DistrictForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.districtNamePrefixLabel);
             this.Controls.Add(this.districtNameLabel);
             this.Controls.Add(this.outputBox);
             this.Controls.Add(this.addDistrictButton);
@@ -122,6 +134,7 @@
         private System.Windows.Forms.Button addDistrictButton;
         private System.Windows.Forms.ListBox outputBox;
         private System.Windows.Forms.Label districtNameLabel;
+        private System.Windows.Forms.Label districtNamePrefixLabel;
     }
 }
 
