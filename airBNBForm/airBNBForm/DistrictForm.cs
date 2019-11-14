@@ -80,6 +80,7 @@ namespace airBNBForm
             for (int NHoodIndex = 0; NHoodIndex < storedNeighborhoods.Length; NHoodIndex++)
             {
                 storedProperties = storedNeighborhoods[NHoodIndex].getNHoodProperties();
+                outputBox.Items.Add(String.Format("The current neighborhood is {0}", storedNeighborhoods[NHoodIndex].getnHoodName()));
 
                 for (int PropertiesIndex = 0; PropertiesIndex < storedProperties.Length; PropertiesIndex++)
                 {
