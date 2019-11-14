@@ -17,7 +17,8 @@ namespace airBNBForm
         Neighborhood[] storedNeighborhoods;
         Property[] storedProperties;
         int currentDistrict = 0,numOfDistricts = 2;
-        DistrictForm initialForm;
+        public static DistrictForm initialForm;
+        addDistrictForm addDistrictFormInstance;
         //These variables will create the sample data
         Property sample1, sample2, sample3, sample4, sample5, sample6, sample7, sample8, sample9, sample10;
 
@@ -105,6 +106,9 @@ namespace airBNBForm
         }
         private void AddDistrictButton_Click(object sender, EventArgs e)
         {
+            addDistrictFormInstance = new addDistrictForm();
+            addDistrictFormInstance.Show();
+            initialForm.Hide();
 
         }
 

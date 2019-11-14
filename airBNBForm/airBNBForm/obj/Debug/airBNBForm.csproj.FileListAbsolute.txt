@@ -8,3 +8,4 @@ M:\MG files\Coding\airBNBform\airBNBForm\airBNBForm\airBNBForm\obj\Debug\airBNBF
 M:\MG files\Coding\airBNBform\airBNBForm\airBNBForm\airBNBForm\obj\Debug\airBNBForm.exe
 M:\MG files\Coding\airBNBform\airBNBForm\airBNBForm\airBNBForm\obj\Debug\airBNBForm.pdb
 M:\MG files\Coding\airBNBform\airBNBForm\airBNBForm\airBNBForm\obj\Debug\airBNBForm.DistrictForm.resources
+M:\MG files\Coding\airBNBform\airBNBForm\airBNBForm\airBNBForm\obj\Debug\airBNBForm.addDistrictForm.resources
