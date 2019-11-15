@@ -13,6 +13,7 @@ namespace airBNBForm
     public partial class addDistrictForm : Form
     {
         addDistrictForm currentForm;
+        District newDistrict;
         public addDistrictForm()
         {
             InitializeComponent();
@@ -23,6 +24,18 @@ namespace airBNBForm
         {
             currentForm.Close();
             DistrictForm.initialForm.Show();
+
+        }
+
+        private void SubmitButton_Click(object sender, EventArgs e)
+        {
+            newDistrict = new District(districtNameBox.Text);
+            DistrictForm.initialForm.numOfDistricts++;
+            Array.Resize(ref DistrictForm.initialForm.database, DistrictForm.initialForm.numOfDistricts);
+            DistrictForm.initialForm.database[DistrictForm.initialForm.numOfDistricts - 1] = newDistrict;
+            currentForm.Close();
+            DistrictForm.initialForm.Show();
+
 
         }
     }

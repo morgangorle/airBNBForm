@@ -13,10 +13,11 @@ namespace airBNBForm
     public partial class DistrictForm : Form
     {
         //These variables will store the data before it is output
-        District[] database;
+        public District[] database;
         Neighborhood[] storedNeighborhoods;
         Property[] storedProperties;
-        int currentDistrict = 0,numOfDistricts = 2;
+        int currentDistrict = 0;
+        public int numOfDistricts = 2;
         public static DistrictForm initialForm;
         addDistrictForm addDistrictFormInstance;
         //These variables will create the sample data

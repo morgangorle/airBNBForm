@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace airBNBForm
 {
-
-    class Property
+    //Class is public to allow members of it to be declared as public.
+    public class Property
     {
         //Here I create all the variables for the Property Class
         string propertyID, propertyName, hostID, hostName,roomType;

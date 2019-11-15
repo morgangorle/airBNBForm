@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace airBNBForm
 {
+    //Class is public to allow members of it to be declared as public.
 
-    class District
+    public class District
     {
         //Here I create all the variables for the District Class
         string districtName;
