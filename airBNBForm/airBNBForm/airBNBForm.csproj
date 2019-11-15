@@ -52,12 +52,30 @@
     <Compile Include="addDistrictForm.Designer.cs">
       <DependentUpon>addDistrictForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="addNeighborhoodForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addNeighborhoodForm.Designer.cs">
+      <DependentUpon>addNeighborhoodForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="addPropertyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addPropertyForm.Designer.cs">
+      <DependentUpon>addPropertyForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="District.cs" />
     <Compile Include="DistrictForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DistrictForm.Designer.cs">
       <DependentUpon>DistrictForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="editDistrictForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editDistrictForm.Designer.cs">
+      <DependentUpon>editDistrictForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Neighborhood.cs" />
     <Compile Include="Program.cs" />
@@ -66,8 +84,17 @@
     <EmbeddedResource Include="addDistrictForm.resx">
       <DependentUpon>addDistrictForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="addNeighborhoodForm.resx">
+      <DependentUpon>addNeighborhoodForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addPropertyForm.resx">
+      <DependentUpon>addPropertyForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DistrictForm.resx">
       <DependentUpon>DistrictForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editDistrictForm.resx">
+      <DependentUpon>editDistrictForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

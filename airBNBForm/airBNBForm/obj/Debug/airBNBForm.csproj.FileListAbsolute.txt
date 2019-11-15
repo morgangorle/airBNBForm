@@ -9,3 +9,6 @@ M:\MG files\Coding\airBNBform\airBNBForm\airBNBForm\airBNBForm\obj\Debug\airBNBF
 M:\MG files\Coding\airBNBform\airBNBForm\airBNBForm\airBNBForm\obj\Debug\airBNBForm.pdb
 M:\MG files\Coding\airBNBform\airBNBForm\airBNBForm\airBNBForm\obj\Debug\airBNBForm.DistrictForm.resources
 M:\MG files\Coding\airBNBform\airBNBForm\airBNBForm\airBNBForm\obj\Debug\airBNBForm.addDistrictForm.resources
+M:\MG files\Coding\airBNBform\airBNBForm\airBNBForm\airBNBForm\obj\Debug\airBNBForm.addNeighborhoodForm.resources
+M:\MG files\Coding\airBNBform\airBNBForm\airBNBForm\airBNBForm\obj\Debug\airBNBForm.addPropertyForm.resources
+M:\MG files\Coding\airBNBform\airBNBForm\airBNBForm\airBNBForm\obj\Debug\airBNBForm.editDistrictForm.resources

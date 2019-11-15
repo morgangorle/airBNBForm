@@ -20,6 +20,9 @@ namespace airBNBForm
         public int numOfDistricts = 2;
         public static DistrictForm initialForm;
         addDistrictForm addDistrictFormInstance;
+        editDistrictForm editDistrictFormInstance;
+        addPropertyForm addPropertyFormInstance;
+        addNeighborhoodForm addNeighborhoodFormInstance;
         //These variables will create the sample data
         Property sample1, sample2, sample3, sample4, sample5, sample6, sample7, sample8, sample9, sample10;
 
@@ -116,15 +119,24 @@ namespace airBNBForm
 
         private void EditDistrictButton_Click(object sender, EventArgs e)
         {
+            editDistrictFormInstance = new editDistrictForm();
+            editDistrictFormInstance.Show();
+            initialForm.Hide();
 
         }
         private void AddPropertyButton_Click(object sender, EventArgs e)
         {
+            addPropertyFormInstance = new addPropertyForm();
+            addPropertyFormInstance.Show();
+            initialForm.Hide();
 
         }
 
         private void AddNHoodButton_Click(object sender, EventArgs e)
         {
+            addNeighborhoodFormInstance = new addNeighborhoodForm();
+            addNeighborhoodFormInstance.Show();
+            initialForm.Hide();
 
         }
     }
