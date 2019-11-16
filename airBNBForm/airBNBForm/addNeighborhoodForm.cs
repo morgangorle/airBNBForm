@@ -13,6 +13,7 @@ namespace airBNBForm
     public partial class addNeighborhoodForm : Form
     {
         addNeighborhoodForm currentForm;
+        int districtIndex;
         public addNeighborhoodForm()
         {
             InitializeComponent();
@@ -28,6 +29,36 @@ namespace airBNBForm
 
         private void AddNHoodButton_Click(object sender, EventArgs e)
         {
+
+            if (searchDistrict(districtBox.Text) == true)
+            {
+                Neighborhood newNeighborhood = new Neighborhood(NHoodBox.Text);
+                DistrictForm.initialForm.database[districtIndex].addNHood(newNeighborhood);
+                DistrictForm.initialForm.Show();
+                currentForm.Close();
+            }
+            else
+            {
+                errorLabel.Text = "District not found";
+            }
+
+        }
+        private Boolean searchDistrict(string inputDistrict)
+        {
+            Boolean foundDistrict = false;
+            int searchIndex = 0;
+            while (foundDistrict == false && searchIndex < DistrictForm.initialForm.numOfDistricts)
+            {
+                if(inputDistrict == DistrictForm.initialForm.database[searchIndex].getDistrictName())
+                {
+                    foundDistrict = true;
+                    districtIndex = searchIndex;
+                    return true;
+                }
+                searchIndex++;
+            }
+
+            return false;
 
         }
     }
