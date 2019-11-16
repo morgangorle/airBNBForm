@@ -17,12 +17,18 @@ namespace airBNBForm
         {
             InitializeComponent();
             currentForm = this;
+            errorLabel.Text = "";
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
             DistrictForm.initialForm.Show();
             currentForm.Close();
+        }
+
+        private void AddNHoodButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
