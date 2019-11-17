@@ -24,5 +24,10 @@ namespace airBNBForm
             currentForm.Close();
             DistrictForm.initialForm.Show();
         }
+
+        private void SubmitButton_Click(object sender, EventArgs e)
+        {
+            Property newProperty;
+        }
     }
 }
