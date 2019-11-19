@@ -27,7 +27,22 @@ namespace airBNBForm
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
+            int districtIndex = 0;
+            int neighborhoodIndex = 0;
+
             Property newProperty;
+            newProperty = new Property(propertyIDBox.Text, propertyNameBox.Text, hostIDBox.Text, hostNameBox.Text, roomTypeBox.Text, double.Parse(latitudeBox.Text), double.Parse(longitudeBox.Text), double.Parse(priceBox.Text), int.Parse(numOfPropertiesBox.Text), int.Parse(minNumNightsBox.Text),int.Parse(availiabilityBox.Text));
+            districtIndex = searchDistrict(districtNameBox.Text);
+            neighborhoodIndex = searchNeighborhood(nHoodNameBox.Text);
+
+        }
+        public int searchDistrict(string inputDistrict)
+        {
+            return 0;
+        }
+        public int searchNeighborhood(string inputNeighborhood)
+        {
+            return 0;
         }
     }
 }
