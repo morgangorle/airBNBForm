@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace airBNBForm
 {
@@ -29,6 +30,12 @@ namespace airBNBForm
 
 
         Neighborhood NHood1, NHood2, NHood3;
+
+        private void ReadFileButton_Click(object sender, EventArgs e)
+        {
+            StreamReader fileReader;
+        }
+
         District District1, District2;
         public DistrictForm()
         {

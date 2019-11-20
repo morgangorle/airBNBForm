@@ -37,6 +37,7 @@
             this.districtNamePrefixLabel = new System.Windows.Forms.Label();
             this.addNHoodButton = new System.Windows.Forms.Button();
             this.addPropertyButton = new System.Windows.Forms.Button();
+            this.readFileButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // displayDistrictButton
@@ -133,11 +134,23 @@
             this.addPropertyButton.UseVisualStyleBackColor = true;
             this.addPropertyButton.Click += new System.EventHandler(this.AddPropertyButton_Click);
             // 
+            // readFileButton
+            // 
+            this.readFileButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.readFileButton.Location = new System.Drawing.Point(66, 355);
+            this.readFileButton.Name = "readFileButton";
+            this.readFileButton.Size = new System.Drawing.Size(135, 54);
+            this.readFileButton.TabIndex = 9;
+            this.readFileButton.Text = "Read data from file";
+            this.readFileButton.UseVisualStyleBackColor = true;
+            this.readFileButton.Click += new System.EventHandler(this.ReadFileButton_Click);
+            // 
             // DistrictForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.readFileButton);
             this.Controls.Add(this.addPropertyButton);
             this.Controls.Add(this.addNHoodButton);
             this.Controls.Add(this.districtNamePrefixLabel);
@@ -166,6 +179,7 @@
         private System.Windows.Forms.Label districtNamePrefixLabel;
         private System.Windows.Forms.Button addNHoodButton;
         private System.Windows.Forms.Button addPropertyButton;
+        private System.Windows.Forms.Button readFileButton;
     }
 }
 
