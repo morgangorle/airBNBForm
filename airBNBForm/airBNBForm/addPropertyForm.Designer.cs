@@ -52,10 +52,11 @@
             this.availiabilityLabel = new System.Windows.Forms.Label();
             this.numPropertiesLabel = new System.Windows.Forms.Label();
             this.submitButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.NHoodLabel = new System.Windows.Forms.Label();
+            this.districtLabel = new System.Windows.Forms.Label();
             this.nHoodNameBox = new System.Windows.Forms.TextBox();
             this.districtNameBox = new System.Windows.Forms.TextBox();
+            this.errorLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cancelButton
@@ -79,7 +80,7 @@
             // 
             // propertyIDBox
             // 
-            this.propertyIDBox.Location = new System.Drawing.Point(138, 40);
+            this.propertyIDBox.Location = new System.Drawing.Point(163, 40);
             this.propertyIDBox.Name = "propertyIDBox";
             this.propertyIDBox.Size = new System.Drawing.Size(100, 20);
             this.propertyIDBox.TabIndex = 2;
@@ -95,14 +96,14 @@
             // 
             // propertyNameBox
             // 
-            this.propertyNameBox.Location = new System.Drawing.Point(138, 73);
+            this.propertyNameBox.Location = new System.Drawing.Point(163, 73);
             this.propertyNameBox.Name = "propertyNameBox";
             this.propertyNameBox.Size = new System.Drawing.Size(100, 20);
             this.propertyNameBox.TabIndex = 4;
             // 
             // hostIDBox
             // 
-            this.hostIDBox.Location = new System.Drawing.Point(138, 115);
+            this.hostIDBox.Location = new System.Drawing.Point(163, 122);
             this.hostIDBox.Name = "hostIDBox";
             this.hostIDBox.Size = new System.Drawing.Size(100, 20);
             this.hostIDBox.TabIndex = 5;
@@ -110,7 +111,7 @@
             // hostIDLabel
             // 
             this.hostIDLabel.AutoSize = true;
-            this.hostIDLabel.Location = new System.Drawing.Point(52, 115);
+            this.hostIDLabel.Location = new System.Drawing.Point(69, 125);
             this.hostIDLabel.Name = "hostIDLabel";
             this.hostIDLabel.Size = new System.Drawing.Size(46, 13);
             this.hostIDLabel.TabIndex = 6;
@@ -119,7 +120,7 @@
             // hostNameLabel
             // 
             this.hostNameLabel.AutoSize = true;
-            this.hostNameLabel.Location = new System.Drawing.Point(52, 162);
+            this.hostNameLabel.Location = new System.Drawing.Point(69, 166);
             this.hostNameLabel.Name = "hostNameLabel";
             this.hostNameLabel.Size = new System.Drawing.Size(63, 13);
             this.hostNameLabel.TabIndex = 7;
@@ -127,7 +128,7 @@
             // 
             // hostNameBox
             // 
-            this.hostNameBox.Location = new System.Drawing.Point(138, 162);
+            this.hostNameBox.Location = new System.Drawing.Point(163, 163);
             this.hostNameBox.Name = "hostNameBox";
             this.hostNameBox.Size = new System.Drawing.Size(100, 20);
             this.hostNameBox.TabIndex = 8;
@@ -135,7 +136,7 @@
             // roomTypeLabel
             // 
             this.roomTypeLabel.AutoSize = true;
-            this.roomTypeLabel.Location = new System.Drawing.Point(55, 208);
+            this.roomTypeLabel.Location = new System.Drawing.Point(69, 207);
             this.roomTypeLabel.Name = "roomTypeLabel";
             this.roomTypeLabel.Size = new System.Drawing.Size(65, 13);
             this.roomTypeLabel.TabIndex = 9;
@@ -143,42 +144,42 @@
             // 
             // roomTypeBox
             // 
-            this.roomTypeBox.Location = new System.Drawing.Point(138, 201);
+            this.roomTypeBox.Location = new System.Drawing.Point(163, 204);
             this.roomTypeBox.Name = "roomTypeBox";
             this.roomTypeBox.Size = new System.Drawing.Size(100, 20);
             this.roomTypeBox.TabIndex = 10;
             // 
             // latitudeBox
             // 
-            this.latitudeBox.Location = new System.Drawing.Point(138, 247);
+            this.latitudeBox.Location = new System.Drawing.Point(163, 245);
             this.latitudeBox.Name = "latitudeBox";
             this.latitudeBox.Size = new System.Drawing.Size(100, 20);
             this.latitudeBox.TabIndex = 11;
             // 
             // longitudeBox
             // 
-            this.longitudeBox.Location = new System.Drawing.Point(138, 283);
+            this.longitudeBox.Location = new System.Drawing.Point(163, 286);
             this.longitudeBox.Name = "longitudeBox";
             this.longitudeBox.Size = new System.Drawing.Size(100, 20);
             this.longitudeBox.TabIndex = 12;
             // 
             // priceBox
             // 
-            this.priceBox.Location = new System.Drawing.Point(138, 317);
+            this.priceBox.Location = new System.Drawing.Point(163, 327);
             this.priceBox.Name = "priceBox";
             this.priceBox.Size = new System.Drawing.Size(100, 20);
             this.priceBox.TabIndex = 13;
             // 
             // minNumNightsBox
             // 
-            this.minNumNightsBox.Location = new System.Drawing.Point(148, 371);
+            this.minNumNightsBox.Location = new System.Drawing.Point(163, 371);
             this.minNumNightsBox.Name = "minNumNightsBox";
             this.minNumNightsBox.Size = new System.Drawing.Size(100, 20);
             this.minNumNightsBox.TabIndex = 14;
             // 
             // availiabilityBox
             // 
-            this.availiabilityBox.Location = new System.Drawing.Point(360, 43);
+            this.availiabilityBox.Location = new System.Drawing.Point(367, 43);
             this.availiabilityBox.Name = "availiabilityBox";
             this.availiabilityBox.Size = new System.Drawing.Size(100, 20);
             this.availiabilityBox.TabIndex = 15;
@@ -193,7 +194,7 @@
             // latitudeLabel
             // 
             this.latitudeLabel.AutoSize = true;
-            this.latitudeLabel.Location = new System.Drawing.Point(55, 247);
+            this.latitudeLabel.Location = new System.Drawing.Point(67, 245);
             this.latitudeLabel.Name = "latitudeLabel";
             this.latitudeLabel.Size = new System.Drawing.Size(48, 13);
             this.latitudeLabel.TabIndex = 17;
@@ -202,7 +203,7 @@
             // longitudeLabel
             // 
             this.longitudeLabel.AutoSize = true;
-            this.longitudeLabel.Location = new System.Drawing.Point(58, 283);
+            this.longitudeLabel.Location = new System.Drawing.Point(69, 286);
             this.longitudeLabel.Name = "longitudeLabel";
             this.longitudeLabel.Size = new System.Drawing.Size(57, 13);
             this.longitudeLabel.TabIndex = 18;
@@ -211,7 +212,7 @@
             // priceLabel
             // 
             this.priceLabel.AutoSize = true;
-            this.priceLabel.Location = new System.Drawing.Point(55, 320);
+            this.priceLabel.Location = new System.Drawing.Point(81, 327);
             this.priceLabel.Name = "priceLabel";
             this.priceLabel.Size = new System.Drawing.Size(34, 13);
             this.priceLabel.TabIndex = 19;
@@ -220,7 +221,7 @@
             // minNumNightsLabel
             // 
             this.minNumNightsLabel.AutoSize = true;
-            this.minNumNightsLabel.Location = new System.Drawing.Point(55, 374);
+            this.minNumNightsLabel.Location = new System.Drawing.Point(60, 371);
             this.minNumNightsLabel.Name = "minNumNightsLabel";
             this.minNumNightsLabel.Size = new System.Drawing.Size(97, 13);
             this.minNumNightsLabel.TabIndex = 20;
@@ -254,23 +255,23 @@
             this.submitButton.UseVisualStyleBackColor = true;
             this.submitButton.Click += new System.EventHandler(this.SubmitButton_Click);
             // 
-            // label1
+            // NHoodLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(306, 162);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 13);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "Neighborhood Name:";
+            this.NHoodLabel.AutoSize = true;
+            this.NHoodLabel.Location = new System.Drawing.Point(306, 162);
+            this.NHoodLabel.Name = "NHoodLabel";
+            this.NHoodLabel.Size = new System.Drawing.Size(108, 13);
+            this.NHoodLabel.TabIndex = 24;
+            this.NHoodLabel.Text = "Neighborhood Name:";
             // 
-            // label2
+            // districtLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(309, 207);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 13);
-            this.label2.TabIndex = 25;
-            this.label2.Text = "District Name:";
+            this.districtLabel.AutoSize = true;
+            this.districtLabel.Location = new System.Drawing.Point(309, 207);
+            this.districtLabel.Name = "districtLabel";
+            this.districtLabel.Size = new System.Drawing.Size(73, 13);
+            this.districtLabel.TabIndex = 25;
+            this.districtLabel.Text = "District Name:";
             // 
             // nHoodNameBox
             // 
@@ -286,15 +287,25 @@
             this.districtNameBox.Size = new System.Drawing.Size(100, 20);
             this.districtNameBox.TabIndex = 27;
             // 
+            // errorLabel
+            // 
+            this.errorLabel.AutoSize = true;
+            this.errorLabel.Location = new System.Drawing.Point(463, 292);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(58, 13);
+            this.errorLabel.TabIndex = 28;
+            this.errorLabel.Text = "Errors here";
+            // 
             // addPropertyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.districtNameBox);
             this.Controls.Add(this.nHoodNameBox);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.districtLabel);
+            this.Controls.Add(this.NHoodLabel);
             this.Controls.Add(this.submitButton);
             this.Controls.Add(this.numPropertiesLabel);
             this.Controls.Add(this.availiabilityLabel);
@@ -352,9 +363,10 @@
         private System.Windows.Forms.Label availiabilityLabel;
         private System.Windows.Forms.Label numPropertiesLabel;
         private System.Windows.Forms.Button submitButton;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label NHoodLabel;
+        private System.Windows.Forms.Label districtLabel;
         private System.Windows.Forms.TextBox nHoodNameBox;
         private System.Windows.Forms.TextBox districtNameBox;
+        private System.Windows.Forms.Label errorLabel;
     }
 }

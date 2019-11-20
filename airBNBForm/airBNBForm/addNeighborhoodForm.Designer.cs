@@ -50,32 +50,36 @@
             // NHoodLabel
             // 
             this.NHoodLabel.AutoSize = true;
+            this.NHoodLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NHoodLabel.Location = new System.Drawing.Point(64, 99);
             this.NHoodLabel.Name = "NHoodLabel";
-            this.NHoodLabel.Size = new System.Drawing.Size(108, 13);
+            this.NHoodLabel.Size = new System.Drawing.Size(159, 20);
             this.NHoodLabel.TabIndex = 1;
             this.NHoodLabel.Text = "Neighborhood Name:";
             // 
             // NHoodBox
             // 
-            this.NHoodBox.Location = new System.Drawing.Point(178, 96);
+            this.NHoodBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NHoodBox.Location = new System.Drawing.Point(229, 99);
             this.NHoodBox.Name = "NHoodBox";
-            this.NHoodBox.Size = new System.Drawing.Size(100, 20);
+            this.NHoodBox.Size = new System.Drawing.Size(100, 26);
             this.NHoodBox.TabIndex = 2;
             // 
             // districtBox
             // 
-            this.districtBox.Location = new System.Drawing.Point(146, 173);
+            this.districtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.districtBox.Location = new System.Drawing.Point(220, 170);
             this.districtBox.Name = "districtBox";
-            this.districtBox.Size = new System.Drawing.Size(100, 20);
+            this.districtBox.Size = new System.Drawing.Size(100, 26);
             this.districtBox.TabIndex = 3;
             // 
             // DistrictLabel
             // 
             this.DistrictLabel.AutoSize = true;
+            this.DistrictLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DistrictLabel.Location = new System.Drawing.Point(67, 176);
             this.DistrictLabel.Name = "DistrictLabel";
-            this.DistrictLabel.Size = new System.Drawing.Size(73, 13);
+            this.DistrictLabel.Size = new System.Drawing.Size(108, 20);
             this.DistrictLabel.TabIndex = 4;
             this.DistrictLabel.Text = "District Name:";
             // 
@@ -92,9 +96,10 @@
             // errorLabel
             // 
             this.errorLabel.AutoSize = true;
-            this.errorLabel.Location = new System.Drawing.Point(104, 245);
+            this.errorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorLabel.Location = new System.Drawing.Point(136, 254);
             this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(58, 13);
+            this.errorLabel.Size = new System.Drawing.Size(87, 20);
             this.errorLabel.TabIndex = 6;
             this.errorLabel.Text = "Error Label";
             // 
