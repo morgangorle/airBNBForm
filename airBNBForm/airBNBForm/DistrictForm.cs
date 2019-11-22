@@ -34,6 +34,12 @@ namespace airBNBForm
         private void ReadFileButton_Click(object sender, EventArgs e)
         {
             StreamReader fileReader;
+            fileReader = new StreamReader("miniAirBnB.txt");
+            string districtName;
+            int numOfNeighborhoods;
+            districtName = fileReader.ReadLine();
+            MessageBox.Show(districtName);
+            fileReader.Close();
         }
 
         District District1, District2;
