@@ -35,10 +35,51 @@ namespace airBNBForm
         {
             StreamReader fileReader;
             fileReader = new StreamReader("miniAirBnB.txt");
-            string districtName;
-            int numOfNeighborhoods;
-            districtName = fileReader.ReadLine();
-            MessageBox.Show(districtName);
+            string districtName,neighborhoodName;
+            string propertyID, propertyName,hostID,hostName,roomType;
+            int numProperties , minNumOfNights, Availiability;
+            double price, latitude,longitude;
+            District newDistrict;
+            Neighborhood newNeighborhood;
+            Property newProperty;
+            int numOfNeighborhoods,numOfProperties;
+            while (fileReader.EndOfStream == false)
+            {
+                districtName = fileReader.ReadLine();
+                newDistrict = new District(districtName);
+                numOfNeighborhoods = int.Parse(fileReader.ReadLine());
+                for (int NHoodIndex = 0; NHoodIndex < numOfNeighborhoods; NHoodIndex++)
+                {
+                    neighborhoodName = fileReader.ReadLine();
+                    numOfProperties = int.Parse(fileReader.ReadLine());
+                    newNeighborhood = new Neighborhood(neighborhoodName);
+                    for (int propertyIndex = 0; propertyIndex < numOfProperties; propertyIndex++)
+                    {
+                        propertyID = fileReader.ReadLine();
+                        propertyName = fileReader.ReadLine();
+                        hostID = fileReader.ReadLine();
+                        hostName = fileReader.ReadLine();
+                        numProperties = int.Parse( fileReader.ReadLine());
+                        latitude = double.Parse(fileReader.ReadLine());
+                        longitude = double.Parse(fileReader.ReadLine());
+                        roomType = fileReader.ReadLine();
+                        price = double.Parse(fileReader.ReadLine());
+                        minNumOfNights = int.Parse(fileReader.ReadLine());
+                        Availiability = int.Parse(fileReader.ReadLine());
+                        newProperty = new Property(propertyID, propertyName, hostID, hostName, roomType, latitude, longitude, price, numProperties, minNumOfNights,Availiability);
+                        newNeighborhood.addProperty(newProperty);
+
+
+                    }
+                    newDistrict.addNHood(newNeighborhood);
+
+                }
+                numOfDistricts++;
+                Array.Resize(ref database, numOfDistricts);
+                database[numOfDistricts - 1] = newDistrict;
+
+            }
+
             fileReader.Close();
         }
 
