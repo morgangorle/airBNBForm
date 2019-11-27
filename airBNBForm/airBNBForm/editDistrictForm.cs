@@ -13,12 +13,17 @@ namespace airBNBForm
     public partial class editDistrictForm : Form
     {
         editDistrictForm currentForm;
-        int currentDistrictIndex = 0;
+        int currentDistrictIndex;
         bool foundSearchItem;
         public editDistrictForm()
         {
             InitializeComponent();
             currentForm = this;
+            currentDistrictIndex = DistrictForm.initialForm.selectedDistrict;
+            if (currentDistrictIndex == -1)
+            {
+                currentDistrictIndex = 0;
+            }
             CurrentNameLabel.Text = DistrictForm.initialForm.database[currentDistrictIndex].getDistrictName();
             searchErrorLabel.Text = "";
         }

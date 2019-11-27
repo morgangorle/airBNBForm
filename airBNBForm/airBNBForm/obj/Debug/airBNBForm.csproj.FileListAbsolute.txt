@@ -26,3 +26,17 @@ C:\Users\mgorle\Downloads\airBNBForm\airBNBForm\airBNBForm\airBNBForm\obj\Debug\
 C:\Users\mgorle\Downloads\airBNBForm\airBNBForm\airBNBForm\airBNBForm\obj\Debug\airBNBForm.csproj.CoreCompileInputs.cache
 C:\Users\mgorle\Downloads\airBNBForm\airBNBForm\airBNBForm\airBNBForm\obj\Debug\airBNBForm.exe
 C:\Users\mgorle\Downloads\airBNBForm\airBNBForm\airBNBForm\airBNBForm\obj\Debug\airBNBForm.pdb
+C:\Users\mgorle\Downloads\airBNBForm-master\airBNBForm-master\airBNBForm\airBNBForm\bin\Debug\airBNBForm.exe.config
+C:\Users\mgorle\Downloads\airBNBForm-master\airBNBForm-master\airBNBForm\airBNBForm\bin\Debug\airBNBForm.exe
+C:\Users\mgorle\Downloads\airBNBForm-master\airBNBForm-master\airBNBForm\airBNBForm\bin\Debug\airBNBForm.pdb
+C:\Users\mgorle\Downloads\airBNBForm-master\airBNBForm-master\airBNBForm\airBNBForm\obj\Debug\airBNBForm.csprojAssemblyReference.cache
+C:\Users\mgorle\Downloads\airBNBForm-master\airBNBForm-master\airBNBForm\airBNBForm\obj\Debug\airBNBForm.addDistrictForm.resources
+C:\Users\mgorle\Downloads\airBNBForm-master\airBNBForm-master\airBNBForm\airBNBForm\obj\Debug\airBNBForm.addNeighborhoodForm.resources
+C:\Users\mgorle\Downloads\airBNBForm-master\airBNBForm-master\airBNBForm\airBNBForm\obj\Debug\airBNBForm.addPropertyForm.resources
+C:\Users\mgorle\Downloads\airBNBForm-master\airBNBForm-master\airBNBForm\airBNBForm\obj\Debug\airBNBForm.DistrictForm.resources
+C:\Users\mgorle\Downloads\airBNBForm-master\airBNBForm-master\airBNBForm\airBNBForm\obj\Debug\airBNBForm.editDistrictForm.resources
+C:\Users\mgorle\Downloads\airBNBForm-master\airBNBForm-master\airBNBForm\airBNBForm\obj\Debug\airBNBForm.Properties.Resources.resources
+C:\Users\mgorle\Downloads\airBNBForm-master\airBNBForm-master\airBNBForm\airBNBForm\obj\Debug\airBNBForm.csproj.GenerateResource.cache
+C:\Users\mgorle\Downloads\airBNBForm-master\airBNBForm-master\airBNBForm\airBNBForm\obj\Debug\airBNBForm.csproj.CoreCompileInputs.cache
+C:\Users\mgorle\Downloads\airBNBForm-master\airBNBForm-master\airBNBForm\airBNBForm\obj\Debug\airBNBForm.exe
+C:\Users\mgorle\Downloads\airBNBForm-master\airBNBForm-master\airBNBForm\airBNBForm\obj\Debug\airBNBForm.pdb
