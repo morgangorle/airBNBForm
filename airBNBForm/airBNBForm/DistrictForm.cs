@@ -62,6 +62,30 @@ namespace airBNBForm
             selectedProperty = propertyOutputBox.SelectedIndex;
 
         }
+        public void updateData()
+        {
+            StreamWriter fileWriter;
+            fileWriter = new StreamWriter("test.txt");
+            for (int districtIndex = 0; districtIndex < numOfDistricts; districtIndex++)
+            {
+                fileWriter.WriteLine(database[districtIndex].getDistrictName());
+                fileWriter.WriteLine(string.Format("{0}",database[districtIndex].getNumOfnHoods()));
+                for (int nHoodIndex = 0; nHoodIndex < database[districtIndex].getNumOfnHoods(); nHoodIndex++)
+                {
+                    fileWriter.WriteLine(database[districtIndex].getDistrictNHoods()[nHoodIndex].getnHoodName());
+                    fileWriter.WriteLine(string.Format("{0}", database[districtIndex].getDistrictNHoods()[nHoodIndex].getNumOfProperties()));
+
+                    for (int propertyIndex = 0; propertyIndex < database[districtIndex].getDistrictNHoods()[nHoodIndex].getNumOfProperties(); propertyIndex++)
+                    {
+
+                    }
+
+                }
+
+
+            }
+            fileWriter.Close();
+        }
 
 
 
