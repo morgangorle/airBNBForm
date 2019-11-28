@@ -65,7 +65,7 @@ namespace airBNBForm
         public void updateData()
         {
             StreamWriter fileWriter;
-            fileWriter = new StreamWriter("test.txt");
+            fileWriter = new StreamWriter("maxiAirBnB.txt");
             for (int districtIndex = 0; districtIndex < numOfDistricts; districtIndex++)
             {
                 fileWriter.WriteLine(database[districtIndex].getDistrictName());
@@ -77,7 +77,17 @@ namespace airBNBForm
 
                     for (int propertyIndex = 0; propertyIndex < database[districtIndex].getDistrictNHoods()[nHoodIndex].getNumOfProperties(); propertyIndex++)
                     {
-
+                        fileWriter.WriteLine(database[districtIndex].getDistrictNHoods()[nHoodIndex].getNHoodProperties()[propertyIndex].getPropertyID());
+                        fileWriter.WriteLine(database[districtIndex].getDistrictNHoods()[nHoodIndex].getNHoodProperties()[propertyIndex].getPropertyName());
+                        fileWriter.WriteLine(database[districtIndex].getDistrictNHoods()[nHoodIndex].getNHoodProperties()[propertyIndex].getHostID());
+                        fileWriter.WriteLine(database[districtIndex].getDistrictNHoods()[nHoodIndex].getNHoodProperties()[propertyIndex].getHostName());
+                        fileWriter.WriteLine(database[districtIndex].getDistrictNHoods()[nHoodIndex].getNHoodProperties()[propertyIndex].getNumOfProperties());
+                        fileWriter.WriteLine(database[districtIndex].getDistrictNHoods()[nHoodIndex].getNHoodProperties()[propertyIndex].getLatitude());
+                        fileWriter.WriteLine(database[districtIndex].getDistrictNHoods()[nHoodIndex].getNHoodProperties()[propertyIndex].getLongitude());
+                        fileWriter.WriteLine(database[districtIndex].getDistrictNHoods()[nHoodIndex].getNHoodProperties()[propertyIndex].getRoomType());
+                        fileWriter.WriteLine(database[districtIndex].getDistrictNHoods()[nHoodIndex].getNHoodProperties()[propertyIndex].getPrice());
+                        fileWriter.WriteLine(database[districtIndex].getDistrictNHoods()[nHoodIndex].getNHoodProperties()[propertyIndex].getMinNumOfNights());
+                        fileWriter.WriteLine(database[districtIndex].getDistrictNHoods()[nHoodIndex].getNHoodProperties()[propertyIndex].getAvailiableDays());
                     }
 
                 }

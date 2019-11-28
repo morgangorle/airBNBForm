@@ -78,6 +78,7 @@ namespace airBNBForm
         private void SubmitButton_Click(object sender, EventArgs e)
         {
             DistrictForm.initialForm.database[currentDistrictIndex].setDistrictName(newNameBox.Text);
+            DistrictForm.initialForm.updateData();
             DistrictForm.initialForm.Show();
             currentForm.Close();
 

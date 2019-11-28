@@ -12724,7 +12724,3 @@ Private room
 69
 2
 355
-Likely
-1
-A Win
-0

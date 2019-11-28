@@ -53,8 +53,10 @@ namespace airBNBForm
                     tempNhoods = DistrictForm.initialForm.database[districtIndex].getDistrictNHoods();
                     tempNhoods[neighborhoodIndex].addProperty(newProperty);
                     DistrictForm.initialForm.database[districtIndex].setDistrictNHoods(tempNhoods);
-                    currentForm.Close();
+                    DistrictForm.initialForm.updateData();
                     DistrictForm.initialForm.Show();
+                    currentForm.Close();
+
                 }
                 else
                 {

@@ -33,8 +33,11 @@ namespace airBNBForm
             DistrictForm.initialForm.numOfDistricts++;
             Array.Resize(ref DistrictForm.initialForm.database, DistrictForm.initialForm.numOfDistricts);
             DistrictForm.initialForm.database[DistrictForm.initialForm.numOfDistricts - 1] = newDistrict;
-            currentForm.Close();
+            DistrictForm.initialForm.updateData();
             DistrictForm.initialForm.Show();
+            currentForm.Close();
+
+
 
 
         }

@@ -34,6 +34,7 @@ namespace airBNBForm
             {
                 Neighborhood newNeighborhood = new Neighborhood(NHoodBox.Text);
                 DistrictForm.initialForm.database[districtIndex].addNHood(newNeighborhood);
+                DistrictForm.initialForm.updateData();
                 DistrictForm.initialForm.Show();
                 currentForm.Close();
             }
