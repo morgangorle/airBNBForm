@@ -37,9 +37,9 @@
             this.nHoodOutputBox = new System.Windows.Forms.ListBox();
             this.propertyOutputBox = new System.Windows.Forms.ListBox();
             this.refreshButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.districtLabel = new System.Windows.Forms.Label();
+            this.nHoodLabel = new System.Windows.Forms.Label();
+            this.propertyLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // editDistrictButton
@@ -141,44 +141,44 @@
             this.refreshButton.UseVisualStyleBackColor = true;
             this.refreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
             // 
-            // label1
+            // districtLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(240, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 26);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Districts";
+            this.districtLabel.AutoSize = true;
+            this.districtLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.districtLabel.Location = new System.Drawing.Point(240, 0);
+            this.districtLabel.Name = "districtLabel";
+            this.districtLabel.Size = new System.Drawing.Size(90, 26);
+            this.districtLabel.TabIndex = 14;
+            this.districtLabel.Text = "Districts";
             // 
-            // label2
+            // nHoodLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(171, 150);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(159, 26);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Neighborhoods";
+            this.nHoodLabel.AutoSize = true;
+            this.nHoodLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nHoodLabel.Location = new System.Drawing.Point(171, 150);
+            this.nHoodLabel.Name = "nHoodLabel";
+            this.nHoodLabel.Size = new System.Drawing.Size(159, 26);
+            this.nHoodLabel.TabIndex = 15;
+            this.nHoodLabel.Text = "Neighborhoods";
             // 
-            // label3
+            // propertyLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(216, 301);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 26);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Properties";
+            this.propertyLabel.AutoSize = true;
+            this.propertyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.propertyLabel.Location = new System.Drawing.Point(216, 301);
+            this.propertyLabel.Name = "propertyLabel";
+            this.propertyLabel.Size = new System.Drawing.Size(111, 26);
+            this.propertyLabel.TabIndex = 16;
+            this.propertyLabel.Text = "Properties";
             // 
             // DistrictForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.propertyLabel);
+            this.Controls.Add(this.nHoodLabel);
+            this.Controls.Add(this.districtLabel);
             this.Controls.Add(this.refreshButton);
             this.Controls.Add(this.propertyOutputBox);
             this.Controls.Add(this.nHoodOutputBox);
@@ -206,9 +206,9 @@
         private System.Windows.Forms.ListBox nHoodOutputBox;
         private System.Windows.Forms.ListBox propertyOutputBox;
         private System.Windows.Forms.Button refreshButton;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label districtLabel;
+        private System.Windows.Forms.Label nHoodLabel;
+        private System.Windows.Forms.Label propertyLabel;
     }
 }
 
