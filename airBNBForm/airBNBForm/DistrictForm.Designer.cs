@@ -40,6 +40,9 @@
             this.districtLabel = new System.Windows.Forms.Label();
             this.nHoodLabel = new System.Windows.Forms.Label();
             this.propertyLabel = new System.Windows.Forms.Label();
+            this.districtBox = new System.Windows.Forms.TextBox();
+            this.editDistrictNameButton = new System.Windows.Forms.Button();
+            this.deleteDistrict = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // editDistrictButton
@@ -171,11 +174,44 @@
             this.propertyLabel.TabIndex = 16;
             this.propertyLabel.Text = "Properties";
             // 
+            // districtBox
+            // 
+            this.districtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.districtBox.Location = new System.Drawing.Point(266, 80);
+            this.districtBox.Name = "districtBox";
+            this.districtBox.Size = new System.Drawing.Size(159, 26);
+            this.districtBox.TabIndex = 17;
+            // 
+            // editDistrictNameButton
+            // 
+            this.editDistrictNameButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editDistrictNameButton.Location = new System.Drawing.Point(266, 112);
+            this.editDistrictNameButton.Name = "editDistrictNameButton";
+            this.editDistrictNameButton.Size = new System.Drawing.Size(138, 34);
+            this.editDistrictNameButton.TabIndex = 18;
+            this.editDistrictNameButton.Text = "Edit District Name";
+            this.editDistrictNameButton.UseVisualStyleBackColor = true;
+            this.editDistrictNameButton.Click += new System.EventHandler(this.EditDistrictNameButton_Click);
+            // 
+            // deleteDistrict
+            // 
+            this.deleteDistrict.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteDistrict.Location = new System.Drawing.Point(266, 153);
+            this.deleteDistrict.Name = "deleteDistrict";
+            this.deleteDistrict.Size = new System.Drawing.Size(138, 35);
+            this.deleteDistrict.TabIndex = 19;
+            this.deleteDistrict.Text = "Delete district";
+            this.deleteDistrict.UseVisualStyleBackColor = true;
+            this.deleteDistrict.Click += new System.EventHandler(this.DeleteDistrict_Click);
+            // 
             // DistrictForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1051, 608);
+            this.Controls.Add(this.deleteDistrict);
+            this.Controls.Add(this.editDistrictNameButton);
+            this.Controls.Add(this.districtBox);
             this.Controls.Add(this.propertyLabel);
             this.Controls.Add(this.nHoodLabel);
             this.Controls.Add(this.districtLabel);
@@ -209,6 +245,9 @@
         private System.Windows.Forms.Label districtLabel;
         private System.Windows.Forms.Label nHoodLabel;
         private System.Windows.Forms.Label propertyLabel;
+        private System.Windows.Forms.TextBox districtBox;
+        private System.Windows.Forms.Button editDistrictNameButton;
+        private System.Windows.Forms.Button deleteDistrict;
     }
 }
 

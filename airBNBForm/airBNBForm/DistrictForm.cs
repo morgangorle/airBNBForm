@@ -49,6 +49,35 @@ namespace airBNBForm
             displayProperties();
 
         }
+
+        private void EditDistrictNameButton_Click(object sender, EventArgs e)
+        {
+            database[selectedDistrict].setDistrictName(districtBox.Text);
+            updateData();
+            displayDistricts();
+
+        }
+
+        private void DeleteDistrict_Click(object sender, EventArgs e)
+        {
+            District[] tempDatabase = new District[numOfDistricts-1];
+            int newArrayPointer = 0;
+            for (int districtIndex = 0; districtIndex < numOfDistricts; districtIndex++)
+            {
+                if (districtIndex != selectedDistrict)
+                {
+                    tempDatabase[newArrayPointer] = database[districtIndex];
+                    newArrayPointer++;
+                }
+
+            }
+            numOfDistricts -= 1;
+            database = tempDatabase;
+            updateData();
+            displayDistricts();
+
+        }
+
         private void NHoodOutputBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             selectedNHood = nHoodOutputBox.SelectedIndex;
