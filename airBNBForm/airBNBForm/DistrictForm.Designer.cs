@@ -102,9 +102,9 @@
             this.districtOutputBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.districtOutputBox.FormattingEnabled = true;
             this.districtOutputBox.ItemHeight = 20;
-            this.districtOutputBox.Location = new System.Drawing.Point(333, 0);
+            this.districtOutputBox.Location = new System.Drawing.Point(431, 44);
             this.districtOutputBox.Name = "districtOutputBox";
-            this.districtOutputBox.Size = new System.Drawing.Size(467, 144);
+            this.districtOutputBox.Size = new System.Drawing.Size(618, 164);
             this.districtOutputBox.TabIndex = 10;
             this.districtOutputBox.SelectedIndexChanged += new System.EventHandler(this.DistrictOutputBox_SelectedIndexChanged);
             // 
@@ -113,9 +113,9 @@
             this.nHoodOutputBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nHoodOutputBox.FormattingEnabled = true;
             this.nHoodOutputBox.ItemHeight = 20;
-            this.nHoodOutputBox.Location = new System.Drawing.Point(333, 150);
+            this.nHoodOutputBox.Location = new System.Drawing.Point(431, 237);
             this.nHoodOutputBox.Name = "nHoodOutputBox";
-            this.nHoodOutputBox.Size = new System.Drawing.Size(467, 144);
+            this.nHoodOutputBox.Size = new System.Drawing.Size(618, 144);
             this.nHoodOutputBox.TabIndex = 11;
             this.nHoodOutputBox.SelectedIndexChanged += new System.EventHandler(this.NHoodOutputBox_SelectedIndexChanged);
             // 
@@ -124,9 +124,9 @@
             this.propertyOutputBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.propertyOutputBox.FormattingEnabled = true;
             this.propertyOutputBox.ItemHeight = 16;
-            this.propertyOutputBox.Location = new System.Drawing.Point(333, 301);
+            this.propertyOutputBox.Location = new System.Drawing.Point(431, 413);
             this.propertyOutputBox.Name = "propertyOutputBox";
-            this.propertyOutputBox.Size = new System.Drawing.Size(467, 148);
+            this.propertyOutputBox.Size = new System.Drawing.Size(608, 196);
             this.propertyOutputBox.TabIndex = 12;
             this.propertyOutputBox.SelectedIndexChanged += new System.EventHandler(this.PropertyOutputBox_SelectedIndexChanged);
             // 
@@ -145,7 +145,7 @@
             // 
             this.districtLabel.AutoSize = true;
             this.districtLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.districtLabel.Location = new System.Drawing.Point(240, 0);
+            this.districtLabel.Location = new System.Drawing.Point(435, 9);
             this.districtLabel.Name = "districtLabel";
             this.districtLabel.Size = new System.Drawing.Size(90, 26);
             this.districtLabel.TabIndex = 14;
@@ -155,7 +155,7 @@
             // 
             this.nHoodLabel.AutoSize = true;
             this.nHoodLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nHoodLabel.Location = new System.Drawing.Point(171, 150);
+            this.nHoodLabel.Location = new System.Drawing.Point(426, 208);
             this.nHoodLabel.Name = "nHoodLabel";
             this.nHoodLabel.Size = new System.Drawing.Size(159, 26);
             this.nHoodLabel.TabIndex = 15;
@@ -165,7 +165,7 @@
             // 
             this.propertyLabel.AutoSize = true;
             this.propertyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.propertyLabel.Location = new System.Drawing.Point(216, 301);
+            this.propertyLabel.Location = new System.Drawing.Point(426, 384);
             this.propertyLabel.Name = "propertyLabel";
             this.propertyLabel.Size = new System.Drawing.Size(111, 26);
             this.propertyLabel.TabIndex = 16;
@@ -175,7 +175,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1051, 608);
             this.Controls.Add(this.propertyLabel);
             this.Controls.Add(this.nHoodLabel);
             this.Controls.Add(this.districtLabel);
