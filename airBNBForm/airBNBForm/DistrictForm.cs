@@ -47,6 +47,7 @@ namespace airBNBForm
             selectedProperty = -1;
             displayNHoods();
             displayProperties();
+            districtBox.Text = database[selectedDistrict].getDistrictName();
 
         }
 
@@ -74,15 +75,39 @@ namespace airBNBForm
             numOfDistricts -= 1;
             database = tempDatabase;
             updateData();
+            selectedDistrict = -1;
+            selectedNHood = -1;
+            selectedProperty = -1;
             displayDistricts();
+            displayNHoods();
+            displayProperties();
+            districtBox.Text = "";
 
         }
+
+
 
         private void NHoodOutputBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             selectedNHood = nHoodOutputBox.SelectedIndex;
             selectedProperty = -1;
             displayProperties();
+            nHoodBox.Text = database[selectedDistrict].getDistrictNHoods()[selectedNHood].getnHoodName();
+
+        }
+
+        private void DeleteNHoodButton_Click(object sender, EventArgs e)
+        {
+            updateData();
+            displayNHoods();
+
+        }
+
+        private void EditNHoodNameButton_Click(object sender, EventArgs e)
+        {
+            database[selectedDistrict].getDistrictNHoods()[selectedNHood].setnHoodName(nHoodBox.Text);
+            updateData();
+            displayNHoods();
 
         }
 

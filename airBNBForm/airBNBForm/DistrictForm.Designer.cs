@@ -43,6 +43,9 @@
             this.districtBox = new System.Windows.Forms.TextBox();
             this.editDistrictNameButton = new System.Windows.Forms.Button();
             this.deleteDistrict = new System.Windows.Forms.Button();
+            this.nHoodBox = new System.Windows.Forms.TextBox();
+            this.editNHoodNameButton = new System.Windows.Forms.Button();
+            this.deleteNHoodButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // editDistrictButton
@@ -204,11 +207,44 @@
             this.deleteDistrict.UseVisualStyleBackColor = true;
             this.deleteDistrict.Click += new System.EventHandler(this.DeleteDistrict_Click);
             // 
+            // nHoodBox
+            // 
+            this.nHoodBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nHoodBox.Location = new System.Drawing.Point(282, 256);
+            this.nHoodBox.Name = "nHoodBox";
+            this.nHoodBox.Size = new System.Drawing.Size(143, 26);
+            this.nHoodBox.TabIndex = 20;
+            // 
+            // editNHoodNameButton
+            // 
+            this.editNHoodNameButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editNHoodNameButton.Location = new System.Drawing.Point(282, 283);
+            this.editNHoodNameButton.Name = "editNHoodNameButton";
+            this.editNHoodNameButton.Size = new System.Drawing.Size(143, 47);
+            this.editNHoodNameButton.TabIndex = 21;
+            this.editNHoodNameButton.Text = "Edit Neighborhood Name";
+            this.editNHoodNameButton.UseVisualStyleBackColor = true;
+            this.editNHoodNameButton.Click += new System.EventHandler(this.EditNHoodNameButton_Click);
+            // 
+            // deleteNHoodButton
+            // 
+            this.deleteNHoodButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteNHoodButton.Location = new System.Drawing.Point(282, 336);
+            this.deleteNHoodButton.Name = "deleteNHoodButton";
+            this.deleteNHoodButton.Size = new System.Drawing.Size(143, 45);
+            this.deleteNHoodButton.TabIndex = 22;
+            this.deleteNHoodButton.Text = "Delete Neighborhood";
+            this.deleteNHoodButton.UseVisualStyleBackColor = true;
+            this.deleteNHoodButton.Click += new System.EventHandler(this.DeleteNHoodButton_Click);
+            // 
             // DistrictForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1051, 608);
+            this.Controls.Add(this.deleteNHoodButton);
+            this.Controls.Add(this.editNHoodNameButton);
+            this.Controls.Add(this.nHoodBox);
             this.Controls.Add(this.deleteDistrict);
             this.Controls.Add(this.editDistrictNameButton);
             this.Controls.Add(this.districtBox);
@@ -248,6 +284,9 @@
         private System.Windows.Forms.TextBox districtBox;
         private System.Windows.Forms.Button editDistrictNameButton;
         private System.Windows.Forms.Button deleteDistrict;
+        private System.Windows.Forms.TextBox nHoodBox;
+        private System.Windows.Forms.Button editNHoodNameButton;
+        private System.Windows.Forms.Button deleteNHoodButton;
     }
 }
 
