@@ -15,99 +15,52 @@ namespace airBNBForm
     {
         //These variables will store the data before it is output
         public District[] database;
-        //Neighborhood[] storedNeighborhoods;
-        //Property[] storedProperties;
-        //int currentDistrict = 0;
-        public int numOfDistricts = 2;
-        //This is to ensure I can go back to my initial form
+        public int numOfDistricts = 0;
+        //This is to ensure I can go back to my initial form after going to another form.
         public static DistrictForm initialForm;
         public int selectedDistrict = -1, selectedNHood = -1, selectedProperty = -1;
         //These are for the forms
-        addDistrictForm addDistrictFormInstance;
-        editDistrictForm editDistrictFormInstance;
         addPropertyForm addPropertyFormInstance;
-        addNeighborhoodForm addNeighborhoodFormInstance;
-        //These variables will create the sample data
-        Property sample1, sample2, sample3, sample4, sample5, sample6, sample7, sample8, sample9, sample10;
-        District District1, District2;
-        Neighborhood NHood1, NHood2, NHood3;
 
-        private void RefreshButton_Click(object sender, EventArgs e)
+
+        public DistrictForm()
         {
+            InitializeComponent();
+            database = new District[numOfDistricts];
+            initialForm = this;
             displayDistricts();
             displayNHoods();
             displayProperties();
+
 
         }
 
         private void DistrictOutputBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //Here I change the selected district number to the one the user clicks on.
             selectedDistrict = districtOutputBox.SelectedIndex;
+            //I also set the selected neighborhood and property values to -1
+            // and call the display methods for them to reset them.
+            //This is to remove the previous set of neighborhoods and properties
+            //And add a new set of neighborhoods.
             selectedNHood = -1;
             selectedProperty = -1;
             displayNHoods();
             displayProperties();
+            //I also put the current district name into the text box for easy editing.
             districtBox.Text = database[selectedDistrict].getDistrictName();
 
         }
-
-        private void EditDistrictNameButton_Click(object sender, EventArgs e)
-        {
-            database[selectedDistrict].setDistrictName(districtBox.Text);
-            updateData();
-            displayDistricts();
-
-        }
-
-        private void DeleteDistrict_Click(object sender, EventArgs e)
-        {
-            District[] tempDatabase = new District[numOfDistricts-1];
-            int newArrayPointer = 0;
-            for (int districtIndex = 0; districtIndex < numOfDistricts; districtIndex++)
-            {
-                if (districtIndex != selectedDistrict)
-                {
-                    tempDatabase[newArrayPointer] = database[districtIndex];
-                    newArrayPointer++;
-                }
-
-            }
-            numOfDistricts -= 1;
-            database = tempDatabase;
-            updateData();
-            selectedDistrict = -1;
-            selectedNHood = -1;
-            selectedProperty = -1;
-            displayDistricts();
-            displayNHoods();
-            displayProperties();
-            districtBox.Text = "";
-
-        }
-
-
-
         private void NHoodOutputBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //Here I change the selected Neighborhood number to the one the user clicks on
             selectedNHood = nHoodOutputBox.SelectedIndex;
+            //I also set the selected property value to -1
+            //then call the display properties function
             selectedProperty = -1;
             displayProperties();
+            //I also put the current neighborhood name into the neighborhood name textbox for easy editing.
             nHoodBox.Text = database[selectedDistrict].getDistrictNHoods()[selectedNHood].getnHoodName();
-
-        }
-
-        private void DeleteNHoodButton_Click(object sender, EventArgs e)
-        {
-            updateData();
-            displayNHoods();
-
-        }
-
-        private void EditNHoodNameButton_Click(object sender, EventArgs e)
-        {
-            database[selectedDistrict].getDistrictNHoods()[selectedNHood].setnHoodName(nHoodBox.Text);
-            updateData();
-            displayNHoods();
 
         }
 
@@ -116,6 +69,126 @@ namespace airBNBForm
             selectedProperty = propertyOutputBox.SelectedIndex;
 
         }
+
+        private void EditDistrictNameButton_Click(object sender, EventArgs e)
+        {
+            if(selectedDistrict != -1)
+            {
+                database[selectedDistrict].setDistrictName(districtBox.Text);
+                updateData();
+                displayDistricts();
+            }
+
+
+        }
+
+        private void EditNHoodNameButton_Click(object sender, EventArgs e)
+        {
+            if (selectedNHood != -1)
+            {
+                database[selectedDistrict].getDistrictNHoods()[selectedNHood].setnHoodName(nHoodBox.Text);
+                updateData();
+                displayNHoods();
+
+            }
+
+
+        }
+        private void EditPropertyButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DeleteDistrict_Click(object sender, EventArgs e)
+        {
+
+            if (selectedDistrict != -1)
+            {
+                District[] tempDatabase = new District[numOfDistricts - 1];
+                int newArrayPointer = 0;
+                for (int districtIndex = 0; districtIndex < numOfDistricts; districtIndex++)
+                {
+                    if (districtIndex != selectedDistrict)
+                    {
+                        tempDatabase[newArrayPointer] = database[districtIndex];
+                        newArrayPointer++;
+                    }
+
+                }
+                numOfDistricts -= 1;
+                database = tempDatabase;
+                updateData();
+                selectedDistrict = -1;
+                selectedNHood = -1;
+                selectedProperty = -1;
+                displayDistricts();
+                displayNHoods();
+                displayProperties();
+                districtBox.Text = "";
+
+            }
+
+
+        }
+
+        private void DeleteNHoodButton_Click(object sender, EventArgs e)
+        {
+
+            if (selectedNHood != -1)
+            {
+                Neighborhood[] tempNeighborhoods = new Neighborhood[database[selectedDistrict].getNumOfnHoods() - 1];
+                int newArrayPointer = 0;
+                for (int nHoodIndex = 0; nHoodIndex < database[selectedDistrict].getNumOfnHoods(); nHoodIndex++)
+                {
+                    if (nHoodIndex != selectedNHood)
+                    {
+                        tempNeighborhoods[newArrayPointer] = database[selectedDistrict].getDistrictNHoods()[nHoodIndex];
+                        newArrayPointer++;
+                    }
+
+                }
+                database[selectedDistrict].setDistrictNHoods(tempNeighborhoods);
+                database[selectedDistrict].setNumOfnHoods(database[selectedDistrict].getNumOfnHoods() - 1);
+                selectedNHood = -1;
+                selectedProperty = -1;
+                displayNHoods();
+                displayProperties();
+                updateData();
+                nHoodBox.Text = "";
+
+            }
+
+
+        }
+
+        private void DeletePropertyButton_Click(object sender, EventArgs e)
+        {
+            if (selectedProperty != -1)
+            {
+                Property[] tempProperties = new Property[database[selectedDistrict].getDistrictNHoods()[selectedNHood].getNumOfProperties() - 1];
+                int newArrayPointer = 0;
+                for (int propertyIndex = 0; propertyIndex < database[selectedDistrict].getDistrictNHoods()[selectedNHood].getNumOfProperties(); propertyIndex++)
+                {
+                    if(propertyIndex != selectedProperty)
+                    {
+                        tempProperties[newArrayPointer] = database[selectedDistrict].getDistrictNHoods()[selectedNHood].getNHoodProperties()[propertyIndex];
+                        newArrayPointer++;
+                    }
+
+                }
+                database[selectedDistrict].getDistrictNHoods()[selectedNHood].setNHoodProperties(tempProperties);
+                database[selectedDistrict].getDistrictNHoods()[selectedNHood].setNumOfProperties(database[selectedDistrict].getDistrictNHoods()[selectedNHood].getNumOfProperties() - 1);
+                selectedProperty = -1;
+
+                displayProperties();
+                updateData();
+
+            }
+
+        }
+
+
+
         public void updateData()
         {
             StreamWriter fileWriter;
@@ -155,8 +228,7 @@ namespace airBNBForm
 
         private void ReadFileButton_Click(object sender, EventArgs e)
         {
-            StreamReader fileReader;
-            fileReader = new StreamReader("maxiAirBnB.txt");
+            StreamReader fileReader = new StreamReader("maxiAirBnB.txt");
             string districtName,neighborhoodName;
             string propertyID, propertyName,hostID,hostName,roomType;
             int numProperties , minNumOfNights, Availiability;
@@ -208,21 +280,13 @@ namespace airBNBForm
         }
 
 
-        public DistrictForm()
-        {
-            InitializeComponent();
-            database = new District[2];
-            initialForm = this;
 
-            createSampleData();
-            displayDistricts();
-            displayNHoods();
-            displayProperties();
-
-
-        }
         private void createSampleData()
         {
+            //These variables will store the sample data
+            Property sample1, sample2, sample3, sample4, sample5, sample6, sample7, sample8, sample9, sample10;
+            District District1, District2;
+            Neighborhood NHood1, NHood2, NHood3;
             //Sample data
             sample1 = new Property("1", "House1", "A Name", "Name1", "Single", 1, 1, 1, 1, 1, 1);
             sample2 = new Property("2", "House2", "A Name", "Name2", "Single", 2, 2, 2, 2, 2, 2);
@@ -252,6 +316,7 @@ namespace airBNBForm
             District1.addNHood(NHood1);
             District1.addNHood(NHood2);
             District2.addNHood(NHood3);
+            //Hardcoded for now
             database[0] = District1;
             database[1] = District2;
 
@@ -296,7 +361,7 @@ namespace airBNBForm
             {
                 for (int propertyIndex = 0; propertyIndex < database[selectedDistrict].getDistrictNHoods()[selectedNHood].getNumOfProperties(); propertyIndex++)
                 {
-                    propertyOutputBox.Items.Add(database[selectedDistrict].getDistrictNHoods()[selectedNHood].getNHoodProperties()[propertyIndex].getPropertyName());
+                    propertyOutputBox.Items.Add(database[selectedDistrict].getDistrictNHoods()[selectedNHood].getNHoodProperties()[propertyIndex].getSummary());
 
                 }
 
@@ -307,17 +372,45 @@ namespace airBNBForm
 
         private void AddDistrictButton_Click(object sender, EventArgs e)
         {
-            addDistrictFormInstance = new addDistrictForm();
-            addDistrictFormInstance.Show();
-            initialForm.Hide();
+            //If the text box is empty no district is added.
+            if (districtBox.Text != "")
+            {
+                District tempDistrict = new District(districtBox.Text);
+                numOfDistricts++;
+                Array.Resize(ref database, numOfDistricts);
+                database[numOfDistricts - 1] = tempDistrict;
+                districtBox.Text = "";
+                displayDistricts();
+                updateData();
+            }
+
+            //addDistrictFormInstance = new addDistrictForm();
+            //addDistrictFormInstance.Show();
+            //initialForm.Hide();
 
         }
 
-        private void EditDistrictButton_Click(object sender, EventArgs e)
+
+
+        private void AddNHoodButton_Click(object sender, EventArgs e)
         {
-            editDistrictFormInstance = new editDistrictForm();
-            editDistrictFormInstance.Show();
-            initialForm.Hide();
+            if(nHoodBox.Text != "")
+            {
+                Neighborhood tempNeighborhood = new Neighborhood(nHoodBox.Text);
+                Neighborhood[] tempNeighborhoodArray;
+                database[selectedDistrict].setNumOfnHoods(database[selectedDistrict].getNumOfnHoods() + 1);
+                tempNeighborhoodArray = database[selectedDistrict].getDistrictNHoods();
+                Array.Resize(ref tempNeighborhoodArray, database[selectedDistrict].getNumOfnHoods());
+                tempNeighborhoodArray[database[selectedDistrict].getNumOfnHoods() - 1] = tempNeighborhood;
+                database[selectedDistrict].setDistrictNHoods(tempNeighborhoodArray);
+                nHoodBox.Text = "";
+                displayNHoods();
+                updateData();
+
+            }
+            //addNeighborhoodFormInstance = new addNeighborhoodForm();
+            //addNeighborhoodFormInstance.Show();
+            //initialForm.Hide();
 
         }
         private void AddPropertyButton_Click(object sender, EventArgs e)
@@ -328,12 +421,6 @@ namespace airBNBForm
 
         }
 
-        private void AddNHoodButton_Click(object sender, EventArgs e)
-        {
-            addNeighborhoodFormInstance = new addNeighborhoodForm();
-            addNeighborhoodFormInstance.Show();
-            initialForm.Hide();
 
-        }
     }
 }

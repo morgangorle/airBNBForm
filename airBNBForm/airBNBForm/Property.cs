@@ -76,6 +76,10 @@ namespace airBNBForm
         {
             return availiableDays;
         }
+        public string getSummary()
+        {
+            return string.Format("{0} ID:{1} is owned by {2} ID:{3} and costs £{4} per night",propertyName,propertyID,hostName,hostID,price);
+        }
         //The Setters for the Property class will be written here.
         public void setPropertyID(string newPropertyID)
         {
