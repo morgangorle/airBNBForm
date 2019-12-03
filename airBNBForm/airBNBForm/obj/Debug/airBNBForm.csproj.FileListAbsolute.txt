@@ -8,10 +8,7 @@ M:\MG files\Coding\airBNBform\airBNBForm\airBNBForm\airBNBForm\obj\Debug\airBNBF
 M:\MG files\Coding\airBNBform\airBNBForm\airBNBForm\airBNBForm\obj\Debug\airBNBForm.exe
 M:\MG files\Coding\airBNBform\airBNBForm\airBNBForm\airBNBForm\obj\Debug\airBNBForm.pdb
 M:\MG files\Coding\airBNBform\airBNBForm\airBNBForm\airBNBForm\obj\Debug\airBNBForm.DistrictForm.resources
-M:\MG files\Coding\airBNBform\airBNBForm\airBNBForm\airBNBForm\obj\Debug\airBNBForm.addDistrictForm.resources
-M:\MG files\Coding\airBNBform\airBNBForm\airBNBForm\airBNBForm\obj\Debug\airBNBForm.addNeighborhoodForm.resources
 M:\MG files\Coding\airBNBform\airBNBForm\airBNBForm\airBNBForm\obj\Debug\airBNBForm.addPropertyForm.resources
-M:\MG files\Coding\airBNBform\airBNBForm\airBNBForm\airBNBForm\obj\Debug\airBNBForm.editDistrictForm.resources
 C:\Users\mgorle\Downloads\airBNBForm\airBNBForm\airBNBForm\airBNBForm\bin\Debug\airBNBForm.exe.config
 C:\Users\mgorle\Downloads\airBNBForm\airBNBForm\airBNBForm\airBNBForm\bin\Debug\airBNBForm.exe
 C:\Users\mgorle\Downloads\airBNBForm\airBNBForm\airBNBForm\airBNBForm\bin\Debug\airBNBForm.pdb

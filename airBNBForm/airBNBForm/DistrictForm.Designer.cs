@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DistrictForm));
             this.addDistrictButton = new System.Windows.Forms.Button();
             this.addNHoodButton = new System.Windows.Forms.Button();
             this.addPropertyButton = new System.Windows.Forms.Button();
@@ -263,6 +264,7 @@
             this.Controls.Add(this.addPropertyButton);
             this.Controls.Add(this.addNHoodButton);
             this.Controls.Add(this.addDistrictButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DistrictForm";
             this.Text = "Air BNB Property Manager";
             this.Load += new System.EventHandler(this.DistrictForm_Load);
