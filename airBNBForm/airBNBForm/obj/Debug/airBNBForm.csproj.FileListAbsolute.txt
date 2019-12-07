@@ -34,3 +34,4 @@ C:\Users\mgorle\Downloads\airBNBForm-master\airBNBForm-master\airBNBForm\airBNBF
 C:\Users\mgorle\Downloads\airBNBForm-master\airBNBForm-master\airBNBForm\airBNBForm\obj\Debug\airBNBForm.csproj.CoreCompileInputs.cache
 C:\Users\mgorle\Downloads\airBNBForm-master\airBNBForm-master\airBNBForm\airBNBForm\obj\Debug\airBNBForm.exe
 C:\Users\mgorle\Downloads\airBNBForm-master\airBNBForm-master\airBNBForm\airBNBForm\obj\Debug\airBNBForm.pdb
+C:\Users\mgorle\Downloads\airBNBForm-master\airBNBForm-master\airBNBForm\airBNBForm\obj\Debug\airBNBForm.searchPropertyForm.resources

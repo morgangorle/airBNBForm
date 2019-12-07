@@ -10233,7 +10233,7 @@ Andr�e
 40.72765
 -73.99881
 Private room
-75
+30
 1
 0
 23357789
@@ -10459,7 +10459,7 @@ Tosin
 40.59802
 -73.75497
 Private room
-70
+100
 1
 361
 30043809
@@ -10718,7 +10718,7 @@ Private room
 1
 355
 2889377
- garden view  / female guest 
+garden view  / female guest 
 14103991
 Ruth
 4
@@ -10751,7 +10751,7 @@ Entire home/apt
 7
 268
 4637014
-??????????????????2 br close to everything
+2 br close to everything
 12459436
 Zena
 2
@@ -10784,7 +10784,7 @@ Entire home/apt
 2
 102
 5340262
-????(Sunnyhome7)
+(Sunnyhome7)
 27673980
 Amy
 8
@@ -10795,7 +10795,7 @@ Private room
 1
 56
 5414911
-�???? �?????PrivateBathroom
+PrivateBathroom
 27673980
 Amy
 8
@@ -10817,7 +10817,7 @@ Entire home/apt
 1
 257
 5762947
-�????� ?????PrivateBathroom
+PrivateBathroom
 27673980
 Amy
 8
