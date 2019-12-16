@@ -46,12 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="addPropertyForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="addPropertyForm.Designer.cs">
-      <DependentUpon>addPropertyForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="District.cs" />
     <Compile Include="DistrictForm.cs">
       <SubType>Form</SubType>
@@ -69,9 +63,6 @@
     <Compile Include="searchPropertyForm.Designer.cs">
       <DependentUpon>searchPropertyForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="addPropertyForm.resx">
-      <DependentUpon>addPropertyForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="DistrictForm.resx">
       <DependentUpon>DistrictForm.cs</DependentUpon>
     </EmbeddedResource>

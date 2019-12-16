@@ -133,25 +133,40 @@ namespace airBNBForm
         }
         private void EditPropertyButton_Click(object sender, EventArgs e)
         {
-            if(selectedProperty != -1)
+            errorLabel.Text = "";
+            if (selectedProperty != -1)
             {
-                //All the property values are set to that of the one in the text box
-                database[selectedDistrict].getDistrictNHoods()[selectedNHood].getNHoodProperties()[selectedProperty].setPropertyID(propertyIDBox.Text);
-                database[selectedDistrict].getDistrictNHoods()[selectedNHood].getNHoodProperties()[selectedProperty].setPropertyName(propertyNameBox.Text);
-                database[selectedDistrict].getDistrictNHoods()[selectedNHood].getNHoodProperties()[selectedProperty].setRoomType(roomTypeBox.Text);
-                database[selectedDistrict].getDistrictNHoods()[selectedNHood].getNHoodProperties()[selectedProperty].setHostID(hostIDBox.Text);
-                database[selectedDistrict].getDistrictNHoods()[selectedNHood].getNHoodProperties()[selectedProperty].setHostName(hostNameBox.Text);
-                database[selectedDistrict].getDistrictNHoods()[selectedNHood].getNHoodProperties()[selectedProperty].setLatitude(double.Parse(latitudeBox.Text));
-                database[selectedDistrict].getDistrictNHoods()[selectedNHood].getNHoodProperties()[selectedProperty].setLongitude(double.Parse(longitudeBox.Text));
-                database[selectedDistrict].getDistrictNHoods()[selectedNHood].getNHoodProperties()[selectedProperty].setAvailiableDays(int.Parse(availiabilityBox.Text));
-                database[selectedDistrict].getDistrictNHoods()[selectedNHood].getNHoodProperties()[selectedProperty].setMinNumOfNights(int.Parse(minNumOfNightsBox.Text));
-                database[selectedDistrict].getDistrictNHoods()[selectedNHood].getNHoodProperties()[selectedProperty].setPrice(double.Parse(priceBox.Text));
-                database[selectedDistrict].getDistrictNHoods()[selectedNHood].getNHoodProperties()[selectedProperty].setNumOfProperties(int.Parse(numOfPropertiesBox.Text));
-                //Then the data in the text file is updated
-                updateData();
-                //And the updated data is displayed.
-                displayProperties();
+                try
+                {
+                    //All the property values are set to that of the one in the text box
+                    database[selectedDistrict].getDistrictNHoods()[selectedNHood].getNHoodProperties()[selectedProperty].setPropertyID(propertyIDBox.Text);
+                    database[selectedDistrict].getDistrictNHoods()[selectedNHood].getNHoodProperties()[selectedProperty].setPropertyName(propertyNameBox.Text);
+                    database[selectedDistrict].getDistrictNHoods()[selectedNHood].getNHoodProperties()[selectedProperty].setRoomType(roomTypeBox.Text);
+                    database[selectedDistrict].getDistrictNHoods()[selectedNHood].getNHoodProperties()[selectedProperty].setHostID(hostIDBox.Text);
+                    database[selectedDistrict].getDistrictNHoods()[selectedNHood].getNHoodProperties()[selectedProperty].setHostName(hostNameBox.Text);
+                    database[selectedDistrict].getDistrictNHoods()[selectedNHood].getNHoodProperties()[selectedProperty].setLatitude(double.Parse(latitudeBox.Text));
+                    database[selectedDistrict].getDistrictNHoods()[selectedNHood].getNHoodProperties()[selectedProperty].setLongitude(double.Parse(longitudeBox.Text));
+                    database[selectedDistrict].getDistrictNHoods()[selectedNHood].getNHoodProperties()[selectedProperty].setAvailiableDays(int.Parse(availiabilityBox.Text));
+                    database[selectedDistrict].getDistrictNHoods()[selectedNHood].getNHoodProperties()[selectedProperty].setMinNumOfNights(int.Parse(minNumOfNightsBox.Text));
+                    database[selectedDistrict].getDistrictNHoods()[selectedNHood].getNHoodProperties()[selectedProperty].setPrice(double.Parse(priceBox.Text));
+                    database[selectedDistrict].getDistrictNHoods()[selectedNHood].getNHoodProperties()[selectedProperty].setNumOfProperties(int.Parse(numOfPropertiesBox.Text));
+                    //Then the data in the text file is updated
+                    updateData();
+                    //And the updated data is displayed.
+                    displayProperties();
 
+                }
+                catch (Exception)
+                {
+
+                    errorLabel.Text = "An error occurred";
+                }
+
+
+            }
+            else
+            {
+                errorLabel.Text = "Please select a property";
             }
 
 
@@ -239,8 +254,9 @@ namespace airBNBForm
                 database[selectedDistrict].getDistrictNHoods()[selectedNHood].setNHoodProperties(tempProperties);
                 database[selectedDistrict].getDistrictNHoods()[selectedNHood].setNumOfProperties(database[selectedDistrict].getDistrictNHoods()[selectedNHood].getNumOfProperties() - 1);
                 selectedProperty = -1;
-
+                //displayProperties is called to ensure that the changes are shown to the user
                 displayProperties();
+                //updateData is called to ensure that the changes are in the text file.
                 updateData();
 
             }
@@ -255,6 +271,7 @@ namespace airBNBForm
 
         public void updateData()
         {
+            //This method writes any changes to the text file.
             StreamWriter fileWriter;
             fileWriter = new StreamWriter("maxiAirBnB.txt");
             for (int districtIndex = 0; districtIndex < numOfDistricts; districtIndex++)
@@ -289,6 +306,7 @@ namespace airBNBForm
         }
         private void readFile()
         {
+            //This function reads in the file.
             StreamReader fileReader = new StreamReader("maxiAirBnB.txt");
             string districtName, neighborhoodName;
             string propertyID, propertyName, hostID, hostName, roomType;
@@ -391,6 +409,7 @@ namespace airBNBForm
 
         private void displayDistricts()
         {
+            //This function displays the current Districts
             districtOutputBox.Items.Clear();
             if (numOfDistricts != 0)
             {
@@ -402,6 +421,8 @@ namespace airBNBForm
         }
         private void displayNHoods()
         {
+            //This function displays the neighborhoods in the current District
+            //Nothing is shown if no district is selected
             nHoodOutputBox.Items.Clear();
             if(numOfDistricts != 0 && selectedDistrict != -1)
             {
@@ -418,6 +439,8 @@ namespace airBNBForm
         }
         private void displayProperties()
         {
+            //This function displays the properties in the current Neighborhood
+            //Nothing is shown if no neighborhood is selected
             propertyOutputBox.Items.Clear();
             if(numOfDistricts != 0 && selectedNHood != -1)
             {
@@ -454,13 +477,17 @@ namespace airBNBForm
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
+            //Here I create a new instance of the search form
             searchPropertyFormInstance = new searchPropertyForm();
+            //Then show it
             searchPropertyFormInstance.Show();
+            //and hide the current form
             initialForm.Hide();
         }
 
         private void AddNHoodButton_Click(object sender, EventArgs e)
         {
+            //Here I have a check to prevent the user from creating blank neighborhoods
             if(nHoodBox.Text != "")
             {
                 Neighborhood tempNeighborhood = new Neighborhood(nHoodBox.Text);
@@ -482,6 +509,7 @@ namespace airBNBForm
         }
         private void AddPropertyButton_Click(object sender, EventArgs e)
         {
+            //Errorlabel is set to blank
             errorLabel.Text = "";
             try
             {
@@ -493,6 +521,8 @@ namespace airBNBForm
             }
             catch (Exception)
             {
+                //If an error occurs the user is informed.
+                //Currently there is no specific error message.
                 errorLabel.Text = "An error occurred";
             }
 

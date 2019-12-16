@@ -166,7 +166,7 @@
             // 
             this.propertyLabel.AutoSize = true;
             this.propertyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.propertyLabel.Location = new System.Drawing.Point(393, 421);
+            this.propertyLabel.Location = new System.Drawing.Point(409, 423);
             this.propertyLabel.Name = "propertyLabel";
             this.propertyLabel.Size = new System.Drawing.Size(111, 26);
             this.propertyLabel.TabIndex = 16;
@@ -281,7 +281,7 @@
             this.roomTypeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roomTypeBox.Location = new System.Drawing.Point(1225, 611);
             this.roomTypeBox.Name = "roomTypeBox";
-            this.roomTypeBox.Size = new System.Drawing.Size(206, 26);
+            this.roomTypeBox.Size = new System.Drawing.Size(215, 26);
             this.roomTypeBox.TabIndex = 27;
             // 
             // priceBox
@@ -321,7 +321,7 @@
             this.latitudeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.latitudeBox.Location = new System.Drawing.Point(1225, 652);
             this.latitudeBox.Name = "latitudeBox";
-            this.latitudeBox.Size = new System.Drawing.Size(100, 26);
+            this.latitudeBox.Size = new System.Drawing.Size(122, 26);
             this.latitudeBox.TabIndex = 32;
             // 
             // longitudeBox
@@ -337,7 +337,7 @@
             this.minNumOfNightsBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minNumOfNightsBox.Location = new System.Drawing.Point(1581, 693);
             this.minNumOfNightsBox.Name = "minNumOfNightsBox";
-            this.minNumOfNightsBox.Size = new System.Drawing.Size(100, 26);
+            this.minNumOfNightsBox.Size = new System.Drawing.Size(114, 26);
             this.minNumOfNightsBox.TabIndex = 34;
             // 
             // availiabilityBox

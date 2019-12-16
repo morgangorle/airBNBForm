@@ -10244,7 +10244,7 @@ Nini
 40.72774
 -74.00161
 Private room
-60
+50
 2
 0
 23626886
@@ -12604,3 +12604,29 @@ Private room
 69
 2
 355
+Larynx
+1
+Lorenz
+2
+1243467
+Beachside Home
+223542
+Lang
+1
+72.5235
+-10.3235
+En-Suite
+25
+3
+50
+1243467
+Seaside Home
+223524
+Marth
+1
+72.4321
+-10.3253
+En-Suite
+54
+3
+25
