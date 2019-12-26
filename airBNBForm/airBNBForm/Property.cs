@@ -76,6 +76,7 @@ namespace airBNBForm
         {
             return availiableDays;
         }
+        //Get Summary is used for getting details to display in the listbox.
         public string getSummary()
         {
             return string.Format("{0} ID:{1} is owned by {2} ID:{3} and costs £{4} per night",propertyName,propertyID,hostName,hostID,price);

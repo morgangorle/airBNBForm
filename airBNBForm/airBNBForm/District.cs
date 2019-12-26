@@ -55,7 +55,7 @@ namespace airBNBForm
         {
             districtNhoods = newDistrictNHoods;
         }
-        //This handles adding a new Neighborhood
+        //This handles adding a new Neighborhood to the Neighborhood array.
         public void addNHood (Neighborhood newNeighborhood)
         {
             numOfnHoods++;

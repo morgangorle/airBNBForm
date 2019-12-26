@@ -13,6 +13,8 @@ namespace airBNBForm
         string nHoodName;
         int numOfProperties;
         Property[] nhoodProperties;
+        //I have two constructors for the neighborhood class
+        //One takes in an array of properties
         public Neighborhood(string initialNHoodName, int initialNumOfProperties, Property[] InitialProperties)
         {
             nHoodName = initialNHoodName;
@@ -20,6 +22,7 @@ namespace airBNBForm
             nhoodProperties = InitialProperties;
 
         }
+        //The other constructor only uses a name and defaults the number of properties to 0.
         public Neighborhood(string initialNHoodName)
         {
             nHoodName = initialNHoodName;
