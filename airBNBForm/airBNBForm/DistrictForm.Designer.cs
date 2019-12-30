@@ -68,15 +68,17 @@
             this.longitudeLabel = new System.Windows.Forms.Label();
             this.minNumOfNightsLabel = new System.Windows.Forms.Label();
             this.availiabilityLabel = new System.Windows.Forms.Label();
-            this.errorLabel = new System.Windows.Forms.Label();
+            this.propertyErrorLabel = new System.Windows.Forms.Label();
             this.searchButton = new System.Windows.Forms.Button();
+            this.districtErrorLabel = new System.Windows.Forms.Label();
+            this.nHoodErrorLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // addDistrictButton
             // 
             this.addDistrictButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.addDistrictButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.addDistrictButton.Location = new System.Drawing.Point(948, 40);
+            this.addDistrictButton.Location = new System.Drawing.Point(439, 41);
             this.addDistrictButton.Name = "addDistrictButton";
             this.addDistrictButton.Size = new System.Drawing.Size(138, 32);
             this.addDistrictButton.TabIndex = 3;
@@ -113,7 +115,7 @@
             this.districtOutputBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.districtOutputBox.FormattingEnabled = true;
             this.districtOutputBox.ItemHeight = 20;
-            this.districtOutputBox.Location = new System.Drawing.Point(510, 40);
+            this.districtOutputBox.Location = new System.Drawing.Point(1, 42);
             this.districtOutputBox.Name = "districtOutputBox";
             this.districtOutputBox.Size = new System.Drawing.Size(432, 224);
             this.districtOutputBox.TabIndex = 10;
@@ -146,7 +148,7 @@
             // 
             this.districtLabel.AutoSize = true;
             this.districtLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.districtLabel.Location = new System.Drawing.Point(606, 7);
+            this.districtLabel.Location = new System.Drawing.Point(30, 9);
             this.districtLabel.Name = "districtLabel";
             this.districtLabel.Size = new System.Drawing.Size(90, 26);
             this.districtLabel.TabIndex = 14;
@@ -175,7 +177,7 @@
             // districtBox
             // 
             this.districtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.districtBox.Location = new System.Drawing.Point(783, 12);
+            this.districtBox.Location = new System.Drawing.Point(418, 9);
             this.districtBox.Name = "districtBox";
             this.districtBox.Size = new System.Drawing.Size(159, 26);
             this.districtBox.TabIndex = 17;
@@ -184,7 +186,7 @@
             // 
             this.editDistrictNameButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.editDistrictNameButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editDistrictNameButton.Location = new System.Drawing.Point(948, 76);
+            this.editDistrictNameButton.Location = new System.Drawing.Point(439, 79);
             this.editDistrictNameButton.Name = "editDistrictNameButton";
             this.editDistrictNameButton.Size = new System.Drawing.Size(138, 34);
             this.editDistrictNameButton.TabIndex = 18;
@@ -196,7 +198,7 @@
             // 
             this.deleteDistrict.Cursor = System.Windows.Forms.Cursors.Hand;
             this.deleteDistrict.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteDistrict.Location = new System.Drawing.Point(948, 116);
+            this.deleteDistrict.Location = new System.Drawing.Point(439, 119);
             this.deleteDistrict.Name = "deleteDistrict";
             this.deleteDistrict.Size = new System.Drawing.Size(138, 35);
             this.deleteDistrict.TabIndex = 19;
@@ -207,7 +209,7 @@
             // nHoodBox
             // 
             this.nHoodBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nHoodBox.Location = new System.Drawing.Point(1443, 12);
+            this.nHoodBox.Location = new System.Drawing.Point(1587, 10);
             this.nHoodBox.Name = "nHoodBox";
             this.nHoodBox.Size = new System.Drawing.Size(143, 26);
             this.nHoodBox.TabIndex = 20;
@@ -281,15 +283,15 @@
             this.roomTypeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roomTypeBox.Location = new System.Drawing.Point(1225, 611);
             this.roomTypeBox.Name = "roomTypeBox";
-            this.roomTypeBox.Size = new System.Drawing.Size(215, 26);
+            this.roomTypeBox.Size = new System.Drawing.Size(152, 26);
             this.roomTypeBox.TabIndex = 27;
             // 
             // priceBox
             // 
             this.priceBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.priceBox.Location = new System.Drawing.Point(1494, 559);
+            this.priceBox.Location = new System.Drawing.Point(1557, 559);
             this.priceBox.Name = "priceBox";
-            this.priceBox.Size = new System.Drawing.Size(107, 26);
+            this.priceBox.Size = new System.Drawing.Size(114, 26);
             this.priceBox.TabIndex = 28;
             // 
             // hostNameBox
@@ -297,7 +299,7 @@
             this.hostNameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hostNameBox.Location = new System.Drawing.Point(1225, 699);
             this.hostNameBox.Name = "hostNameBox";
-            this.hostNameBox.Size = new System.Drawing.Size(175, 26);
+            this.hostNameBox.Size = new System.Drawing.Size(152, 26);
             this.hostNameBox.TabIndex = 29;
             // 
             // hostIDBox
@@ -305,15 +307,15 @@
             this.hostIDBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hostIDBox.Location = new System.Drawing.Point(1225, 738);
             this.hostIDBox.Name = "hostIDBox";
-            this.hostIDBox.Size = new System.Drawing.Size(122, 26);
+            this.hostIDBox.Size = new System.Drawing.Size(152, 26);
             this.hostIDBox.TabIndex = 30;
             // 
             // numOfPropertiesBox
             // 
             this.numOfPropertiesBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numOfPropertiesBox.Location = new System.Drawing.Point(1533, 735);
+            this.numOfPropertiesBox.Location = new System.Drawing.Point(1557, 735);
             this.numOfPropertiesBox.Name = "numOfPropertiesBox";
-            this.numOfPropertiesBox.Size = new System.Drawing.Size(100, 26);
+            this.numOfPropertiesBox.Size = new System.Drawing.Size(114, 26);
             this.numOfPropertiesBox.TabIndex = 31;
             // 
             // latitudeBox
@@ -321,21 +323,21 @@
             this.latitudeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.latitudeBox.Location = new System.Drawing.Point(1225, 652);
             this.latitudeBox.Name = "latitudeBox";
-            this.latitudeBox.Size = new System.Drawing.Size(122, 26);
+            this.latitudeBox.Size = new System.Drawing.Size(152, 26);
             this.latitudeBox.TabIndex = 32;
             // 
             // longitudeBox
             // 
             this.longitudeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.longitudeBox.Location = new System.Drawing.Point(1475, 652);
+            this.longitudeBox.Location = new System.Drawing.Point(1557, 655);
             this.longitudeBox.Name = "longitudeBox";
-            this.longitudeBox.Size = new System.Drawing.Size(100, 26);
+            this.longitudeBox.Size = new System.Drawing.Size(114, 26);
             this.longitudeBox.TabIndex = 33;
             // 
             // minNumOfNightsBox
             // 
             this.minNumOfNightsBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minNumOfNightsBox.Location = new System.Drawing.Point(1581, 693);
+            this.minNumOfNightsBox.Location = new System.Drawing.Point(1557, 693);
             this.minNumOfNightsBox.Name = "minNumOfNightsBox";
             this.minNumOfNightsBox.Size = new System.Drawing.Size(114, 26);
             this.minNumOfNightsBox.TabIndex = 34;
@@ -343,9 +345,9 @@
             // availiabilityBox
             // 
             this.availiabilityBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.availiabilityBox.Location = new System.Drawing.Point(1581, 611);
+            this.availiabilityBox.Location = new System.Drawing.Point(1557, 611);
             this.availiabilityBox.Name = "availiabilityBox";
-            this.availiabilityBox.Size = new System.Drawing.Size(100, 26);
+            this.availiabilityBox.Size = new System.Drawing.Size(114, 26);
             this.availiabilityBox.TabIndex = 35;
             // 
             // propertyIDLabel
@@ -382,7 +384,7 @@
             // 
             this.priceLabel.AutoSize = true;
             this.priceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.priceLabel.Location = new System.Drawing.Point(1433, 565);
+            this.priceLabel.Location = new System.Drawing.Point(1396, 562);
             this.priceLabel.Name = "priceLabel";
             this.priceLabel.Size = new System.Drawing.Size(48, 20);
             this.priceLabel.TabIndex = 39;
@@ -412,7 +414,7 @@
             // 
             this.numOfPropertiesLabel.AutoSize = true;
             this.numOfPropertiesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numOfPropertiesLabel.Location = new System.Drawing.Point(1364, 741);
+            this.numOfPropertiesLabel.Location = new System.Drawing.Point(1388, 741);
             this.numOfPropertiesLabel.Name = "numOfPropertiesLabel";
             this.numOfPropertiesLabel.Size = new System.Drawing.Size(163, 20);
             this.numOfPropertiesLabel.TabIndex = 42;
@@ -432,7 +434,7 @@
             // 
             this.longitudeLabel.AutoSize = true;
             this.longitudeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.longitudeLabel.Location = new System.Drawing.Point(1364, 655);
+            this.longitudeLabel.Location = new System.Drawing.Point(1396, 655);
             this.longitudeLabel.Name = "longitudeLabel";
             this.longitudeLabel.Size = new System.Drawing.Size(84, 20);
             this.longitudeLabel.TabIndex = 44;
@@ -442,7 +444,7 @@
             // 
             this.minNumOfNightsLabel.AutoSize = true;
             this.minNumOfNightsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minNumOfNightsLabel.Location = new System.Drawing.Point(1433, 696);
+            this.minNumOfNightsLabel.Location = new System.Drawing.Point(1388, 702);
             this.minNumOfNightsLabel.Name = "minNumOfNightsLabel";
             this.minNumOfNightsLabel.Size = new System.Drawing.Size(142, 20);
             this.minNumOfNightsLabel.TabIndex = 45;
@@ -452,21 +454,22 @@
             // 
             this.availiabilityLabel.AutoSize = true;
             this.availiabilityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.availiabilityLabel.Location = new System.Drawing.Point(1446, 614);
+            this.availiabilityLabel.Location = new System.Drawing.Point(1395, 617);
             this.availiabilityLabel.Name = "availiabilityLabel";
             this.availiabilityLabel.Size = new System.Drawing.Size(129, 20);
             this.availiabilityLabel.TabIndex = 46;
             this.availiabilityLabel.Text = "Availiability (/365)";
             // 
-            // errorLabel
+            // propertyErrorLabel
             // 
-            this.errorLabel.AutoSize = true;
-            this.errorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errorLabel.Location = new System.Drawing.Point(1267, 772);
-            this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(232, 26);
-            this.errorLabel.TabIndex = 47;
-            this.errorLabel.Text = "Errors Displayed Here!";
+            this.propertyErrorLabel.AutoSize = true;
+            this.propertyErrorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.propertyErrorLabel.Location = new System.Drawing.Point(1267, 772);
+            this.propertyErrorLabel.Name = "propertyErrorLabel";
+            this.propertyErrorLabel.Size = new System.Drawing.Size(232, 26);
+            this.propertyErrorLabel.TabIndex = 47;
+            this.propertyErrorLabel.Text = "Errors Displayed Here!";
+            this.propertyErrorLabel.Click += new System.EventHandler(this.ErrorLabel_Click);
             // 
             // searchButton
             // 
@@ -480,6 +483,26 @@
             this.searchButton.UseVisualStyleBackColor = true;
             this.searchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
+            // districtErrorLabel
+            // 
+            this.districtErrorLabel.AutoSize = true;
+            this.districtErrorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.districtErrorLabel.Location = new System.Drawing.Point(89, 269);
+            this.districtErrorLabel.Name = "districtErrorLabel";
+            this.districtErrorLabel.Size = new System.Drawing.Size(226, 26);
+            this.districtErrorLabel.TabIndex = 49;
+            this.districtErrorLabel.Text = "Errors Displayed Here";
+            // 
+            // nHoodErrorLabel
+            // 
+            this.nHoodErrorLabel.AutoSize = true;
+            this.nHoodErrorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nHoodErrorLabel.Location = new System.Drawing.Point(1171, 281);
+            this.nHoodErrorLabel.Name = "nHoodErrorLabel";
+            this.nHoodErrorLabel.Size = new System.Drawing.Size(226, 26);
+            this.nHoodErrorLabel.TabIndex = 50;
+            this.nHoodErrorLabel.Text = "Errors Displayed Here";
+            // 
             // DistrictForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -487,8 +510,10 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1742, 807);
+            this.Controls.Add(this.nHoodErrorLabel);
+            this.Controls.Add(this.districtErrorLabel);
             this.Controls.Add(this.searchButton);
-            this.Controls.Add(this.errorLabel);
+            this.Controls.Add(this.propertyErrorLabel);
             this.Controls.Add(this.availiabilityLabel);
             this.Controls.Add(this.minNumOfNightsLabel);
             this.Controls.Add(this.longitudeLabel);
@@ -577,8 +602,10 @@
         private System.Windows.Forms.Label longitudeLabel;
         private System.Windows.Forms.Label minNumOfNightsLabel;
         private System.Windows.Forms.Label availiabilityLabel;
-        private System.Windows.Forms.Label errorLabel;
+        private System.Windows.Forms.Label propertyErrorLabel;
         private System.Windows.Forms.Button searchButton;
+        private System.Windows.Forms.Label districtErrorLabel;
+        private System.Windows.Forms.Label nHoodErrorLabel;
     }
 }
 

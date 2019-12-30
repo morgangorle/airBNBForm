@@ -32,7 +32,11 @@ namespace airBNBForm
             displayDistricts();
             displayNHoods();
             displayProperties();
-            errorLabel.Text = "";
+            propertyErrorLabel.Text = "";
+            nHoodErrorLabel.Text = "";
+            districtErrorLabel.Text = "";
+            editDistrictNameButton.Enabled = false;
+            deleteDistrict.Enabled = false;
             readFile();
 
 
@@ -54,10 +58,15 @@ namespace airBNBForm
             if(selectedDistrict != -1)
             {
                 districtBox.Text = database[selectedDistrict].getDistrictName();
+                editDistrictNameButton.Enabled = true;
+                deleteDistrict.Enabled = true;
+
             }
             else
             {
                 districtBox.Text = "";
+                editDistrictNameButton.Enabled = false;
+                deleteDistrict.Enabled = false;
             }
 
 
@@ -133,7 +142,7 @@ namespace airBNBForm
         }
         private void EditPropertyButton_Click(object sender, EventArgs e)
         {
-            errorLabel.Text = "";
+            propertyErrorLabel.Text = "";
             if (selectedProperty != -1)
             {
                 try
@@ -159,14 +168,14 @@ namespace airBNBForm
                 catch (Exception)
                 {
 
-                    errorLabel.Text = "An error occurred";
+                    propertyErrorLabel.Text = "An error occurred";
                 }
 
 
             }
             else
             {
-                errorLabel.Text = "Please select a property";
+                propertyErrorLabel.Text = "Please select a property";
             }
 
 
@@ -237,7 +246,7 @@ namespace airBNBForm
 
         private void DeletePropertyButton_Click(object sender, EventArgs e)
         {
-            errorLabel.Text = "";
+            propertyErrorLabel.Text = "";
             if (selectedProperty != -1)
             {
                 Property[] tempProperties = new Property[database[selectedDistrict].getDistrictNHoods()[selectedNHood].getNumOfProperties() - 1];
@@ -262,7 +271,7 @@ namespace airBNBForm
             }
             else
             {
-                errorLabel.Text = "Please select a property to delete";
+                propertyErrorLabel.Text = "Please select a property to delete";
             }
 
         }
@@ -457,16 +466,41 @@ namespace airBNBForm
 
         private void AddDistrictButton_Click(object sender, EventArgs e)
         {
+            districtErrorLabel.Text = "";
             //If the text box is empty no district is added.
             if (districtBox.Text != "")
             {
-                District tempDistrict = new District(districtBox.Text);
-                numOfDistricts++;
-                Array.Resize(ref database, numOfDistricts);
-                database[numOfDistricts - 1] = tempDistrict;
-                districtBox.Text = "";
-                displayDistricts();
-                updateData();
+                bool identicalFound = false;
+                for (int districtIndex = 0; districtIndex < numOfDistricts; districtIndex++)
+                {
+                    if(database[districtIndex].getDistrictName() == districtBox.Text)
+                    {
+                        identicalFound = true;
+                    }
+                }
+
+                if(identicalFound == false)
+                {
+                    District tempDistrict = new District(districtBox.Text);
+                    numOfDistricts++;
+                    Array.Resize(ref database, numOfDistricts);
+                    database[numOfDistricts - 1] = tempDistrict;
+                    districtBox.Text = "";
+                    displayDistricts();
+                    updateData();
+
+                }
+                else
+                {
+                    //The user is informed that they can't add multiple districts with the same name
+                    districtErrorLabel.Text = "Can't add a duplicate district";
+                }
+
+            }
+            else
+            {
+                //The user is informed that they need to enter something for a district to be added
+                districtErrorLabel.Text = "Can't add a blank district";
             }
 
             //addDistrictFormInstance = new addDistrictForm();
@@ -483,6 +517,11 @@ namespace airBNBForm
             searchPropertyFormInstance.Show();
             //and hide the current form
             initialForm.Hide();
+        }
+
+        private void ErrorLabel_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void AddNHoodButton_Click(object sender, EventArgs e)
@@ -510,7 +549,7 @@ namespace airBNBForm
         private void AddPropertyButton_Click(object sender, EventArgs e)
         {
             //Errorlabel is set to blank
-            errorLabel.Text = "";
+            propertyErrorLabel.Text = "";
             try
             {
                 Property tempProperty = new Property(propertyIDBox.Text, propertyNameBox.Text, hostIDBox.Text, hostNameBox.Text, roomTypeBox.Text, double.Parse(latitudeBox.Text), double.Parse(longitudeBox.Text), double.Parse(priceBox.Text), int.Parse(numOfPropertiesBox.Text), int.Parse(minNumOfNightsBox.Text), int.Parse(availiabilityBox.Text));
@@ -523,7 +562,7 @@ namespace airBNBForm
             {
                 //If an error occurs the user is informed.
                 //Currently there is no specific error message.
-                errorLabel.Text = "An error occurred";
+                propertyErrorLabel.Text = "An error occurred";
             }
 
             //addPropertyFormInstance = new addPropertyForm();

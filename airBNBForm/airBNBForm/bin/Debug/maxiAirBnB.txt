@@ -4681,7 +4681,7 @@ Private room
 30
 155
 Brooklyn
-2
+3
 Bay Ridge
 76
 21668437
@@ -9460,6 +9460,19 @@ Private room
 65
 2
 48
+Bay Ridge
+1
+35183442
+2  Big Rooms in Brooklyn NY 1 block  from Subway!
+63866600
+David
+3
+40.62937
+-74.03001
+Private room
+100
+1
+365
 Manhattan
 2
 Gramercy
@@ -12630,3 +12643,5 @@ En-Suite
 54
 3
 25
+Brooklyn
+0
