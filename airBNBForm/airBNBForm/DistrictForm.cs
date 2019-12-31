@@ -487,6 +487,7 @@ namespace airBNBForm
                     if(database[districtIndex].getDistrictName() == districtBox.Text)
                     {
                         identicalFound = true;
+                        break;
                     }
                 }
 
@@ -533,20 +534,43 @@ namespace airBNBForm
 
         private void AddNHoodButton_Click(object sender, EventArgs e)
         {
+            nHoodErrorLabel.Text = "";
             //Here I have a check to prevent the user from creating blank neighborhoods
-            if(nHoodBox.Text != "")
+            if (nHoodBox.Text != "")
             {
-                Neighborhood tempNeighborhood = new Neighborhood(nHoodBox.Text);
-                Neighborhood[] tempNeighborhoodArray;
-                database[selectedDistrict].setNumOfnHoods(database[selectedDistrict].getNumOfnHoods() + 1);
-                tempNeighborhoodArray = database[selectedDistrict].getDistrictNHoods();
-                Array.Resize(ref tempNeighborhoodArray, database[selectedDistrict].getNumOfnHoods());
-                tempNeighborhoodArray[database[selectedDistrict].getNumOfnHoods() - 1] = tempNeighborhood;
-                database[selectedDistrict].setDistrictNHoods(tempNeighborhoodArray);
-                nHoodBox.Text = "";
-                displayNHoods();
-                updateData();
+                bool identicalFound = false;
+                for (int nHoodIndex = 0; nHoodIndex < database[selectedDistrict].getNumOfnHoods(); nHoodIndex++)
+                {
+                    if (database[selectedDistrict].getDistrictNHoods()[nHoodIndex].getnHoodName() == nHoodBox.Text)
+                    {
+                        identicalFound = true;
+                        break;
+                    }
+                }
+                if(identicalFound == false)
+                {
+                    Neighborhood tempNeighborhood = new Neighborhood(nHoodBox.Text);
+                    Neighborhood[] tempNeighborhoodArray;
+                    database[selectedDistrict].setNumOfnHoods(database[selectedDistrict].getNumOfnHoods() + 1);
+                    tempNeighborhoodArray = database[selectedDistrict].getDistrictNHoods();
+                    Array.Resize(ref tempNeighborhoodArray, database[selectedDistrict].getNumOfnHoods());
+                    tempNeighborhoodArray[database[selectedDistrict].getNumOfnHoods() - 1] = tempNeighborhood;
+                    database[selectedDistrict].setDistrictNHoods(tempNeighborhoodArray);
+                    nHoodBox.Text = "";
+                    displayNHoods();
+                    updateData();
 
+                }
+                else
+                {
+                    nHoodErrorLabel.Text = "Can't add an duplicate neighborhood to the same district";
+                }
+
+
+            }
+            else
+            {
+                nHoodErrorLabel.Text = "Can't add a blank neighborhood";
             }
             //addNeighborhoodFormInstance = new addNeighborhoodForm();
             //addNeighborhoodFormInstance.Show();
