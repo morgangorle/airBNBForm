@@ -115,6 +115,13 @@ namespace airBNBForm
                 numOfPropertiesBox.Text = string.Format("{0}", database[selectedDistrict].getDistrictNHoods()[selectedNHood].getNHoodProperties()[selectedProperty].getNumOfProperties());
                 minNumOfNightsBox.Text = string.Format("{0}", database[selectedDistrict].getDistrictNHoods()[selectedNHood].getNHoodProperties()[selectedProperty].getMinNumOfNights());
                 availiabilityBox.Text = string.Format("{0}", database[selectedDistrict].getDistrictNHoods()[selectedNHood].getNHoodProperties()[selectedProperty].getAvailiableDays());
+                editPropertyButton.Enabled = true;
+                deletePropertyButton.Enabled = true;
+            }
+            else
+            {
+                editPropertyButton.Enabled = false;
+                deletePropertyButton.Enabled = false;
             }
 
 
@@ -469,6 +476,11 @@ namespace airBNBForm
 
                 }
 
+            }
+            if(selectedProperty == -1)
+            {
+                editPropertyButton.Enabled = false;
+                deletePropertyButton.Enabled = false;
             }
 
 
