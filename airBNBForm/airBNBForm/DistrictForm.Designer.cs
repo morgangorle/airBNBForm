@@ -469,7 +469,6 @@
             this.propertyErrorLabel.Size = new System.Drawing.Size(232, 26);
             this.propertyErrorLabel.TabIndex = 47;
             this.propertyErrorLabel.Text = "Errors Displayed Here!";
-            this.propertyErrorLabel.Click += new System.EventHandler(this.ErrorLabel_Click);
             // 
             // searchButton
             // 

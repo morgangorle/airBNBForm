@@ -83,10 +83,14 @@ namespace airBNBForm
             if(selectedNHood != -1)
             {
                 nHoodBox.Text = database[selectedDistrict].getDistrictNHoods()[selectedNHood].getnHoodName();
+                editNHoodNameButton.Enabled = true;
+                deleteNHoodButton.Enabled = true;
             }
             else
             {
                 nHoodBox.Text = "";
+                editNHoodNameButton.Enabled = false;
+                deleteNHoodButton.Enabled = false;
 
             }
 
@@ -444,6 +448,12 @@ namespace airBNBForm
 
 
             }
+            if(selectedNHood == -1)
+            {
+                nHoodBox.Text = "";
+                editNHoodNameButton.Enabled = false;
+                deleteNHoodButton.Enabled = false;
+            }
 
         }
         private void displayProperties()
@@ -460,6 +470,7 @@ namespace airBNBForm
                 }
 
             }
+
 
         }
 
@@ -519,10 +530,6 @@ namespace airBNBForm
             initialForm.Hide();
         }
 
-        private void ErrorLabel_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void AddNHoodButton_Click(object sender, EventArgs e)
         {
