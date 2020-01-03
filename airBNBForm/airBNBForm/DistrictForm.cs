@@ -446,6 +446,7 @@ namespace airBNBForm
             nHoodOutputBox.Items.Clear();
             if(numOfDistricts != 0 && selectedDistrict != -1)
             {
+                addNHoodButton.Enabled = true;
                 for (int nHoodIndex = 0; nHoodIndex < database[selectedDistrict].getNumOfnHoods(); nHoodIndex++)
                 {
                     nHoodOutputBox.Items.Add(database[selectedDistrict].getDistrictNHoods()[nHoodIndex].getnHoodName());
@@ -454,6 +455,10 @@ namespace airBNBForm
                 }
 
 
+            }
+            else
+            {
+                addNHoodButton.Enabled = false;
             }
             if(selectedNHood == -1)
             {
@@ -470,12 +475,17 @@ namespace airBNBForm
             propertyOutputBox.Items.Clear();
             if(numOfDistricts != 0 && selectedNHood != -1)
             {
+                addPropertyButton.Enabled = true;
                 for (int propertyIndex = 0; propertyIndex < database[selectedDistrict].getDistrictNHoods()[selectedNHood].getNumOfProperties(); propertyIndex++)
                 {
                     propertyOutputBox.Items.Add(database[selectedDistrict].getDistrictNHoods()[selectedNHood].getNHoodProperties()[propertyIndex].getSummary());
 
                 }
 
+            }
+            else
+            {
+                addPropertyButton.Enabled = false;
             }
             if(selectedProperty == -1)
             {
