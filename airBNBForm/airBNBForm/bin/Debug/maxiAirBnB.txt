@@ -14,13 +14,13 @@ Entire home/apt
 2
 347
 498120
-Hi Traveler.. welcome
+Hello.. Traveller
 2459648
-Ellen
+Ellen - BANNED
 1
 40.8687
 -73.8524
-Private room
+"Private" room
 35
 7
 90
@@ -4513,7 +4513,7 @@ Private room
 35
 2
 59
-Kingsbridge
+Queensbridge
 15
 71812
 Condo Apartment with laundry in unit
@@ -9473,7 +9473,7 @@ Private room
 100
 1
 365
-Manhattan
+Womanhattan
 2
 Gramercy
 65
@@ -10192,7 +10192,7 @@ Entire home/apt
 200
 28
 73
-Greenwich Village
+Yellowwich Village
 9
 22731353
 Cozy apartment in Greenwich Village
@@ -10557,7 +10557,7 @@ Flushed
 32363
 Fully Furnished Basement Apartment
 140025
-Fredah
+Fredoh
 1
 40.74028
 -73.83168
@@ -12619,29 +12619,5 @@ Private room
 355
 Larynx
 1
-Lorenz
-2
-1243467
-Beachside Home
-223542
-Lang
-1
-72.5235
--10.3235
-En-Suite
-25
-3
-50
-1243467
-Seaside Home
-223524
-Marth
-1
-72.4321
--10.3253
-En-Suite
-54
-3
-25
-Brooklyn
+Poorlonton
 0

@@ -14,13 +14,12 @@ namespace airBNBForm
     public partial class DistrictForm : Form
     {
         //These variables will store the data before it is output
+        //The public variables are used in the other form.
         public District[] database;
         public int numOfDistricts = 0;
         //This is to ensure I can go back to my initial form after going to another form.
         public static DistrictForm initialForm;
         public int selectedDistrict = -1, selectedNHood = -1, selectedProperty = -1;
-        //These are for the forms
-        //addPropertyForm addPropertyFormInstance;
         searchPropertyForm searchPropertyFormInstance;
 
 
@@ -32,6 +31,7 @@ namespace airBNBForm
             displayDistricts();
             displayNHoods();
             displayProperties();
+            //I set the errorLabels to be blank as no errors have occurred.
             propertyErrorLabel.Text = "";
             nHoodErrorLabel.Text = "";
             districtErrorLabel.Text = "";
@@ -41,6 +41,24 @@ namespace airBNBForm
 
 
         }
+
+        private void DistrictForm_DoubleClick(object sender, EventArgs e)
+        {
+            //This makes it so that the view is reset when the user double clicks on the background
+            districtOutputBox.SelectedIndex = -1;
+        }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            //Here I create a new instance of the search form
+            searchPropertyFormInstance = new searchPropertyForm();
+            //Then show it
+            searchPropertyFormInstance.Show();
+            //and hide the current form
+            initialForm.Hide();
+        }
+
+
 
         private void DistrictOutputBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -54,9 +72,9 @@ namespace airBNBForm
             selectedProperty = -1;
             displayNHoods();
             displayProperties();
-            //I also put the current district name into the text box for easy editing.
             if(selectedDistrict != -1)
             {
+                //I also put the current district name into the text box for easy editing.
                 districtBox.Text = database[selectedDistrict].getDistrictName();
                 editDistrictNameButton.Enabled = true;
                 deleteDistrict.Enabled = true;
@@ -129,11 +147,36 @@ namespace airBNBForm
 
         private void EditDistrictNameButton_Click(object sender, EventArgs e)
         {
+            districtErrorLabel.Text = "";
             if(selectedDistrict != -1)
             {
-                database[selectedDistrict].setDistrictName(districtBox.Text);
-                updateData();
-                displayDistricts();
+                bool duplicateFound = false;
+                //Before the edit is made
+                //I check for the name not being unique
+                for (int districtIndex = 0; districtIndex < numOfDistricts; districtIndex++)
+                {
+                    if(database[districtIndex].getDistrictName() == districtBox.Text)
+                    {
+                        duplicateFound = true;
+                    }
+                }
+
+                if(duplicateFound == false)
+                {
+                    database[selectedDistrict].setDistrictName(districtBox.Text);
+                    updateData();
+                    displayDistricts();
+
+                }
+                else if (districtBox.Text == database[selectedDistrict].getDistrictName())
+                {
+                    districtErrorLabel.Text = "To edit you need to change the text in the textbox";
+                }
+                else
+                {
+                    districtErrorLabel.Text = "You can't change a district to have the same name as another district";
+                }
+
             }
 
 
@@ -141,11 +184,35 @@ namespace airBNBForm
 
         private void EditNHoodNameButton_Click(object sender, EventArgs e)
         {
+            nHoodErrorLabel.Text = "";
             if (selectedNHood != -1)
             {
-                database[selectedDistrict].getDistrictNHoods()[selectedNHood].setnHoodName(nHoodBox.Text);
-                updateData();
-                displayNHoods();
+                bool duplicateFound = false;
+                for (int nHoodIndex = 0; nHoodIndex < database[selectedDistrict].getNumOfnHoods(); nHoodIndex++)
+                {
+                    if (database[selectedDistrict].getDistrictNHoods()[nHoodIndex].getnHoodName() == nHoodBox.Text)
+                    {
+                        duplicateFound = true;
+                    }
+                }
+
+                if(duplicateFound == false)
+                {
+                    database[selectedDistrict].getDistrictNHoods()[selectedNHood].setnHoodName(nHoodBox.Text);
+                    updateData();
+                    displayNHoods();
+
+                }
+                else if (database[selectedDistrict].getDistrictNHoods()[selectedNHood].getnHoodName() == nHoodBox.Text)
+                {
+                    nHoodErrorLabel.Text = "To edit you need to change the text in the textbox";
+
+                }
+                else
+                {
+                    nHoodErrorLabel.Text = "You can't edit a neighborhood to have the same name as another neighborhood";
+                }
+
 
             }
 
@@ -200,8 +267,10 @@ namespace airBNBForm
             {
                 District[] tempDatabase = new District[numOfDistricts - 1];
                 int newArrayPointer = 0;
+                //Here I loop through my districts
                 for (int districtIndex = 0; districtIndex < numOfDistricts; districtIndex++)
                 {
+                    //All unselected districts are added to a temporary array
                     if (districtIndex != selectedDistrict)
                     {
                         tempDatabase[newArrayPointer] = database[districtIndex];
@@ -210,6 +279,7 @@ namespace airBNBForm
 
                 }
                 numOfDistricts -= 1;
+                //Then database is made equal to the temporary array. This deletes the chosen district.
                 database = tempDatabase;
                 updateData();
                 selectedDistrict = -1;
@@ -232,16 +302,20 @@ namespace airBNBForm
             {
                 Neighborhood[] tempNeighborhoods = new Neighborhood[database[selectedDistrict].getNumOfnHoods() - 1];
                 int newArrayPointer = 0;
+                //Here I loop through the neighborhoods
                 for (int nHoodIndex = 0; nHoodIndex < database[selectedDistrict].getNumOfnHoods(); nHoodIndex++)
                 {
+                    //And all neighborhoods except the selected neighborhood are copied into the tempNeighborhood array
                     if (nHoodIndex != selectedNHood)
-                    {
+                    { 
                         tempNeighborhoods[newArrayPointer] = database[selectedDistrict].getDistrictNHoods()[nHoodIndex];
                         newArrayPointer++;
                     }
 
                 }
+                //Afterward the districts array of neighborhoods is set to the temp array of neighborhoods
                 database[selectedDistrict].setDistrictNHoods(tempNeighborhoods);
+                //And the number of neighborhoods is reduced by one.
                 database[selectedDistrict].setNumOfnHoods(database[selectedDistrict].getNumOfnHoods() - 1);
                 selectedNHood = -1;
                 selectedProperty = -1;
@@ -262,8 +336,10 @@ namespace airBNBForm
             {
                 Property[] tempProperties = new Property[database[selectedDistrict].getDistrictNHoods()[selectedNHood].getNumOfProperties() - 1];
                 int newArrayPointer = 0;
+                //Here I loop through all the properties in the current neighborhood
                 for (int propertyIndex = 0; propertyIndex < database[selectedDistrict].getDistrictNHoods()[selectedNHood].getNumOfProperties(); propertyIndex++)
                 {
+                    //If they aren't the selected property they are added to the tempProperties array
                     if(propertyIndex != selectedProperty)
                     {
                         tempProperties[newArrayPointer] = database[selectedDistrict].getDistrictNHoods()[selectedNHood].getNHoodProperties()[propertyIndex];
@@ -271,6 +347,7 @@ namespace airBNBForm
                     }
 
                 }
+                //Then the property array of the current neighborhood is made equal to the tempProperties array, removing the selected property.
                 database[selectedDistrict].getDistrictNHoods()[selectedNHood].setNHoodProperties(tempProperties);
                 database[selectedDistrict].getDistrictNHoods()[selectedNHood].setNumOfProperties(database[selectedDistrict].getDistrictNHoods()[selectedNHood].getNumOfProperties() - 1);
                 selectedProperty = -1;
@@ -327,7 +404,9 @@ namespace airBNBForm
         private void readFile()
         {
             //This function reads in the file.
+            //A streamreader is made to read in the text file
             StreamReader fileReader = new StreamReader("maxiAirBnB.txt");
+            //Temporary variables are made
             string districtName, neighborhoodName;
             string propertyID, propertyName, hostID, hostName, roomType;
             int numProperties, minNumOfNights, Availiability;
@@ -369,6 +448,7 @@ namespace airBNBForm
                 }
                 numOfDistricts++;
                 Array.Resize(ref database, numOfDistricts);
+                //database is where all the data from the textfile ends up.
                 database[numOfDistricts - 1] = newDistrict;
 
             }
@@ -376,54 +456,6 @@ namespace airBNBForm
             displayNHoods();
             displayProperties();
             fileReader.Close();
-
-        }
-
-
-        //private void createSampleData()
-        //{
-        //    //These variables will store the sample data
-        //    Property sample1, sample2, sample3, sample4, sample5, sample6, sample7, sample8, sample9, sample10;
-        //    District District1, District2;
-        //    Neighborhood NHood1, NHood2, NHood3;
-        //    //Sample data
-        //    sample1 = new Property("1", "House1", "A Name", "Name1", "Single", 1, 1, 1, 1, 1, 1);
-        //    sample2 = new Property("2", "House2", "A Name", "Name2", "Single", 2, 2, 2, 2, 2, 2);
-        //    sample3 = new Property("3", "House3", "A Name", "Name3", "Single", 3, 3, 3, 3, 3, 3);
-        //    sample4 = new Property("4", "House4", "A Name", "Name4", "Single", 4, 4, 4, 4, 4, 4);
-        //    sample5 = new Property("5", "House5", "A Name", "Name5", "Single", 5, 5, 5, 5, 5, 5);
-        //    sample6 = new Property("6", "House6", "A Name", "Name6", "Single", 6, 6, 6, 6, 6, 6);
-        //    sample7 = new Property("7", "House7", "A Name", "Name7", "Single", 7, 7, 7, 7, 7, 7);
-        //    sample8 = new Property("8", "House8", "A Name", "Name8", "Single", 8, 8, 8, 8, 8, 8);
-        //    sample9 = new Property("9", "House9", "A Name", "Name9", "Single", 9, 9, 9, 9, 9, 9);
-        //    sample10 = new Property("10", "House10", "A Name", "Name10", "Single", 10, 10, 10, 10, 10, 10);
-        //    NHood1 = new Neighborhood("Ringview");
-        //    NHood2 = new Neighborhood("viewRing");
-        //    NHood3 = new Neighborhood("Verona");
-        //    District1 = new District("Samp1");
-        //    District2 = new District("Samp2");
-        //    NHood1.addProperty(sample1);
-        //    NHood1.addProperty(sample2);
-        //    NHood1.addProperty(sample3);
-        //    NHood1.addProperty(sample4);
-        //    NHood2.addProperty(sample5);
-        //    NHood2.addProperty(sample6);
-        //    NHood2.addProperty(sample7);
-        //    NHood3.addProperty(sample8);
-        //    NHood3.addProperty(sample9);
-        //    NHood3.addProperty(sample10);
-        //    District1.addNHood(NHood1);
-        //    District1.addNHood(NHood2);
-        //    District2.addNHood(NHood3);
-        //    //Hardcoded for now
-        //    database[0] = District1;
-        //    database[1] = District2;
-
-        //}
-
-
-        private void DistrictForm_Load(object sender, EventArgs e)
-        {
 
         }
 
@@ -491,6 +523,17 @@ namespace airBNBForm
             {
                 editPropertyButton.Enabled = false;
                 deletePropertyButton.Enabled = false;
+                propertyNameBox.Text = "";
+                propertyIDBox.Text = "";
+                priceBox.Text = "";
+                latitudeBox.Text = "";
+                longitudeBox.Text = "";
+                roomTypeBox.Text = "";
+                availiabilityBox.Text = "";
+                hostIDBox.Text = "";
+                hostNameBox.Text = "";
+                minNumOfNightsBox.Text = "";
+                numOfPropertiesBox.Text = "";
             }
 
 
@@ -537,20 +580,7 @@ namespace airBNBForm
                 districtErrorLabel.Text = "Can't add a blank district";
             }
 
-            //addDistrictFormInstance = new addDistrictForm();
-            //addDistrictFormInstance.Show();
-            //initialForm.Hide();
 
-        }
-
-        private void SearchButton_Click(object sender, EventArgs e)
-        {
-            //Here I create a new instance of the search form
-            searchPropertyFormInstance = new searchPropertyForm();
-            //Then show it
-            searchPropertyFormInstance.Show();
-            //and hide the current form
-            initialForm.Hide();
         }
 
 
@@ -560,6 +590,7 @@ namespace airBNBForm
             //Here I have a check to prevent the user from creating blank neighborhoods
             if (nHoodBox.Text != "")
             {
+                //I also have a check to prevent identical neighborhoods within the same district.
                 bool identicalFound = false;
                 for (int nHoodIndex = 0; nHoodIndex < database[selectedDistrict].getNumOfnHoods(); nHoodIndex++)
                 {
@@ -594,9 +625,6 @@ namespace airBNBForm
             {
                 nHoodErrorLabel.Text = "Can't add a blank neighborhood";
             }
-            //addNeighborhoodFormInstance = new addNeighborhoodForm();
-            //addNeighborhoodFormInstance.Show();
-            //initialForm.Hide();
 
         }
         private void AddPropertyButton_Click(object sender, EventArgs e)
@@ -605,10 +633,32 @@ namespace airBNBForm
             propertyErrorLabel.Text = "";
             try
             {
-                Property tempProperty = new Property(propertyIDBox.Text, propertyNameBox.Text, hostIDBox.Text, hostNameBox.Text, roomTypeBox.Text, double.Parse(latitudeBox.Text), double.Parse(longitudeBox.Text), double.Parse(priceBox.Text), int.Parse(numOfPropertiesBox.Text), int.Parse(minNumOfNightsBox.Text), int.Parse(availiabilityBox.Text));
-                database[selectedDistrict].getDistrictNHoods()[selectedNHood].addProperty(tempProperty);
-                updateData();
-                displayProperties();
+                //Here I check for a property with an identical ID to the one about to be added
+                bool duplicateFound = false;
+                for (int propertyIndex = 0; propertyIndex < database[selectedDistrict].getDistrictNHoods()[selectedNHood].getNumOfProperties(); propertyIndex++)
+                {
+                    if (database[selectedDistrict].getDistrictNHoods()[selectedNHood].getNHoodProperties()[propertyIndex].getPropertyID() == propertyIDBox.Text)
+                    {
+                        duplicateFound = true;
+                        break;
+                    }
+                }
+                //If one isn't found the property is added
+
+                if(duplicateFound == false)
+                {
+                    Property tempProperty = new Property(propertyIDBox.Text, propertyNameBox.Text, hostIDBox.Text, hostNameBox.Text, roomTypeBox.Text, double.Parse(latitudeBox.Text), double.Parse(longitudeBox.Text), double.Parse(priceBox.Text), int.Parse(numOfPropertiesBox.Text), int.Parse(minNumOfNightsBox.Text), int.Parse(availiabilityBox.Text));
+                    database[selectedDistrict].getDistrictNHoods()[selectedNHood].addProperty(tempProperty);
+                    updateData();
+                    displayProperties();
+                }
+                else
+                {
+                    //Otherwise the user is informed of the problem.
+                    propertyErrorLabel.Text = "You can't add a property with an identical ID";
+                }
+
+
 
             }
             catch (Exception)
@@ -617,10 +667,6 @@ namespace airBNBForm
                 //Currently there is no specific error message.
                 propertyErrorLabel.Text = "An error occurred";
             }
-
-            //addPropertyFormInstance = new addPropertyForm();
-            //addPropertyFormInstance.Show();
-            //initialForm.Hide();
 
         }
 

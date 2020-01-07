@@ -34,3 +34,14 @@ C:\Users\mgorle\Downloads\airBNBForm-master\airBNBForm-master\airBNBForm\airBNBF
 C:\Users\mgorle\Downloads\airBNBForm-master\airBNBForm-master\airBNBForm\airBNBForm\obj\Debug\airBNBForm.pdb
 C:\Users\mgorle\Downloads\airBNBForm-master\airBNBForm-master\airBNBForm\airBNBForm\obj\Debug\airBNBForm.searchPropertyForm.resources
 M:\MG files\Coding\airBNBform\airBNBForm\airBNBForm\airBNBForm\obj\Debug\airBNBForm.searchPropertyForm.resources
+C:\Users\mgorle\Downloads\airBNBForm 7January\airBNBForm-master\airBNBForm-master\airBNBForm\airBNBForm\bin\Debug\airBNBForm.exe.config
+C:\Users\mgorle\Downloads\airBNBForm 7January\airBNBForm-master\airBNBForm-master\airBNBForm\airBNBForm\bin\Debug\airBNBForm.exe
+C:\Users\mgorle\Downloads\airBNBForm 7January\airBNBForm-master\airBNBForm-master\airBNBForm\airBNBForm\bin\Debug\airBNBForm.pdb
+C:\Users\mgorle\Downloads\airBNBForm 7January\airBNBForm-master\airBNBForm-master\airBNBForm\airBNBForm\obj\Debug\airBNBForm.csprojAssemblyReference.cache
+C:\Users\mgorle\Downloads\airBNBForm 7January\airBNBForm-master\airBNBForm-master\airBNBForm\airBNBForm\obj\Debug\airBNBForm.DistrictForm.resources
+C:\Users\mgorle\Downloads\airBNBForm 7January\airBNBForm-master\airBNBForm-master\airBNBForm\airBNBForm\obj\Debug\airBNBForm.Properties.Resources.resources
+C:\Users\mgorle\Downloads\airBNBForm 7January\airBNBForm-master\airBNBForm-master\airBNBForm\airBNBForm\obj\Debug\airBNBForm.searchPropertyForm.resources
+C:\Users\mgorle\Downloads\airBNBForm 7January\airBNBForm-master\airBNBForm-master\airBNBForm\airBNBForm\obj\Debug\airBNBForm.csproj.GenerateResource.cache
+C:\Users\mgorle\Downloads\airBNBForm 7January\airBNBForm-master\airBNBForm-master\airBNBForm\airBNBForm\obj\Debug\airBNBForm.csproj.CoreCompileInputs.cache
+C:\Users\mgorle\Downloads\airBNBForm 7January\airBNBForm-master\airBNBForm-master\airBNBForm\airBNBForm\obj\Debug\airBNBForm.exe
+C:\Users\mgorle\Downloads\airBNBForm 7January\airBNBForm-master\airBNBForm-master\airBNBForm\airBNBForm\obj\Debug\airBNBForm.pdb

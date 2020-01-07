@@ -202,7 +202,7 @@
             this.deleteDistrict.Name = "deleteDistrict";
             this.deleteDistrict.Size = new System.Drawing.Size(138, 35);
             this.deleteDistrict.TabIndex = 19;
-            this.deleteDistrict.Text = "Delete district";
+            this.deleteDistrict.Text = "Delete District";
             this.deleteDistrict.UseVisualStyleBackColor = true;
             this.deleteDistrict.Click += new System.EventHandler(this.DeleteDistrict_Click);
             // 
@@ -486,7 +486,7 @@
             // 
             this.districtErrorLabel.AutoSize = true;
             this.districtErrorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.districtErrorLabel.Location = new System.Drawing.Point(89, 269);
+            this.districtErrorLabel.Location = new System.Drawing.Point(12, 269);
             this.districtErrorLabel.Name = "districtErrorLabel";
             this.districtErrorLabel.Size = new System.Drawing.Size(226, 26);
             this.districtErrorLabel.TabIndex = 49;
@@ -496,7 +496,7 @@
             // 
             this.nHoodErrorLabel.AutoSize = true;
             this.nHoodErrorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nHoodErrorLabel.Location = new System.Drawing.Point(1171, 281);
+            this.nHoodErrorLabel.Location = new System.Drawing.Point(968, 269);
             this.nHoodErrorLabel.Name = "nHoodErrorLabel";
             this.nHoodErrorLabel.Size = new System.Drawing.Size(226, 26);
             this.nHoodErrorLabel.TabIndex = 50;
@@ -555,7 +555,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DistrictForm";
             this.Text = "Air BNB Property Manager";
-            this.Load += new System.EventHandler(this.DistrictForm_Load);
+            this.DoubleClick += new System.EventHandler(this.DistrictForm_DoubleClick);
             this.ResumeLayout(false);
             this.PerformLayout();
 
